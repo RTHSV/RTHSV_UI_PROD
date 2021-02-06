@@ -80,6 +80,13 @@ function displayNoticeData(obj) {
 				success: function (response1) {
 					$("#noticeDisplay").find(".loader").remove();
 					$("#noticeDisplay").append("<h2>Notice No." + (++notCnt) + " : " + $(notice).attr('noticeSub') + "</h2><iframe width='100%' style='margin-bottom: 60px;' height='100%' src='data:application/pdf;base64, " + response1 + "'></iframe>");
+					//window.open("data:application/pdf;base64," + response1);
+					const linkSource = "data:application/pdf;base64,"+response1;
+					const downloadLink = document.createElement("a");
+					const fileName = "abc.pdf";
+					downloadLink.href = linkSource;
+					downloadLink.download = fileName;
+					downloadLink.click();﻿
 				},
 				error: function (response) {
 					alert("Error while download data");

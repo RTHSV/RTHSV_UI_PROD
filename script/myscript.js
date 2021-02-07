@@ -79,14 +79,11 @@ function displayNoticeData(obj) {
 				url: contextPathStud + "downloadNotice",
 				success: function (response1) {
 					$("#noticeDisplay").find(".loader").remove();
-					//$("#noticeDisplay").append("<h2>Notice No." + (++notCnt) + " : " + $(notice).attr('noticeSub') + "</h2><iframe width='100%' style='margin-bottom: 60px;' height='100%' src='data:application/pdf;base64, " + response1 + "'></iframe>");
-					//window.open("data:application/pdf;base64," + response1);
-					const linkSource = "data:application/pdf;base64,"+response1;
-					const downloadLink = document.createElement("a");
-					const fileName = "abc.pdf";
-					downloadLink.href = linkSource;
-					downloadLink.download = fileName;
-					downloadLink.click();﻿
+					if(sessionStorage.getItem('appview') == 'true'){
+						$("#noticeDisplay").append("<h2>Notice No." + (++notCnt) + " : " + $(notice).attr('noticeSub') + "</h2><input type='button' class='btn btn-primary' value='Download Notice for "+$(notice).attr('noticeSub')+"' data-respone="+response1+" onclick='return downloadNoticeApp(this)'><br><br>");
+					}else{
+						$("#noticeDisplay").append("<h2>Notice No." + (++notCnt) + " : " + $(notice).attr('noticeSub') + "</h2><iframe width='100%' style='margin-bottom: 60px;' height='100%' src='data:application/pdf;base64, " + response1 + "'></iframe>");
+					}
 				},
 				error: function (response) {
 					alert("Error while download data");
@@ -99,7 +96,15 @@ function displayNoticeData(obj) {
 		$("#noticeDisplay").html("<h1> No Notice is available </h1>");
 	return false;
 }
-
+function downloadNoticeApp(obj){
+	const linkSource = "data:application/pdf;base64,"+$(obj).attr('data-respone');
+	const downloadLink = document.createElement("a");
+	const fileName = "abc.pdf";
+	downloadLink.href = linkSource;
+	downloadLink.download = fileName;
+	downloadLink.click();﻿
+	
+}
 function viewStudentResult(obj) {
 	emptyResult();
 	if ($("#seatNo").val() == "") {

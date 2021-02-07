@@ -428,6 +428,10 @@
             x[slideIndex - 1].style.display = "block";
             dots[slideIndex - 1].className += " w3-white";            
         }
+		if(window.location.search == '?appview'){
+			sessionStorage.setItem('appview','true'); 
+			console.log('Android app view')
+		}
     </script>
 
 

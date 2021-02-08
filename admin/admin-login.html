@@ -142,6 +142,9 @@
 	<script type="text/javascript" src="../script/jquery.js"></script>
 		<script type="text/javascript" src="../script/myscript-admin.js"></script>
 		<script>
+		if (location.protocol == 'http:'){
+		  location.href = location.href.replace("http","https");
+		}
 			$("#password").focus();			
 			$("#password").keypress(
 			  function(event){

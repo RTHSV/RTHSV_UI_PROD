@@ -130,6 +130,16 @@ function displayNoticeData(obj) {
 	return false;
 }
 
+function downloadNoticeApp(obj){
+	const linkSource = "data:application/pdf;base64,"+$(obj).attr('data-respone');
+	const downloadLink = document.createElement("a");
+	const fileName = "abc.pdf";
+	downloadLink.href = linkSource;
+	downloadLink.download = fileName;
+	downloadLink.click();﻿
+	
+}
+
 function viewStudentResult(obj) {
 	emptyResult();
 	if ($("#seatNo").val() == "") {

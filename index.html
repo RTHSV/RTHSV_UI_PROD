@@ -7,6 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>RAMSHETH THAKUR HIGHER SECONDARY VIDYALAYA,KHARGHAR</title>
+	<script>
+		if (location.protocol == 'http:'){
+		  location.href = location.href.replace("http","https");
+		}
+	</script>
     <link rel="icon" href="./images/Logo.PNG" sizes="32x32" />
 
     <!-- Css Files -->
@@ -35,7 +40,7 @@
 <body>
 
     <!--// Main Wrapper \\-->
-    <div class="wm-main-wrapper">
+    <div class="wm-main-wrapper">       
 
         <div id="headerSec"></div>
 
@@ -62,7 +67,7 @@
                 </div>
             </div>
         </div>
-        
+
         <!--// Main Content \\-->
         <div class="wm-main-content" style="padding: 0 !important; ">
 
@@ -98,40 +103,44 @@
                     <div class="wm-main-section wm-testimonial-full" style="padding: 0 !important; ">
                         <div class="container">
                             <div class="row">
-        
+
                                 <div class="col-md-12">
                                     <div class="wm-fancy-title">
                                         <h2>College Heads</h2>
                                     </div>
                                     <div class="wm-testimonial-slider">
                                         <div class="wm-testimonial-slider-wrap">
-                                            <p>It is my pride privilege to speak to you regarding college and appeal you to be a
+                                            <p>It is my pride privilege to speak to you regarding college and appeal you
+                                                to be a
                                                 member of our C. K. Thakur college family.</p>
                                             <figure>
                                                 <a href="javascript:void(0);" class="wm-testimonial-thumb"><img
                                                         src="./images/Chairman.jpg" alt="Chairman" title="Chairman"></a>
                                                 <figcaption>
-                                                    <h5><a href="javascript:void(0);">Hon. Shri. Ramsheth Thakur</a></h5>
+                                                    <h5><a href="javascript:void(0);">Hon. Shri. Ramsheth Thakur</a>
+                                                    </h5>
                                                     <span>Ex.M.P.Hon. Chairman</span>
                                                 </figcaption>
                                             </figure>
                                         </div>
                                         <div class="wm-testimonial-slider-wrap">
-                                            <p>It is with great pleasure that I welcome you into the portals of this Learning
+                                            <p>It is with great pleasure that I welcome you into the portals of this
+                                                Learning
                                                 Community "Ramsheth Thakur Higher Secondary Vidyalaya", Kharghar</p>
                                             <figure>
                                                 <a href="javascript:void(0);" class="wm-testimonial-thumb"><img
                                                         src="./images/Incharge Principal.jpg" alt="Principal"
                                                         title="Principal"></a>
                                                 <figcaption>
-                                                    <h5><a href="javascript:void(0);">PriyaSmt. Durgadevi J. Mourya</a></h5>
+                                                    <h5><a href="javascript:void(0);">PriyaSmt. Durgadevi J. Mourya</a>
+                                                    </h5>
                                                     <span>In-charge Principal</span>
                                                 </figcaption>
                                             </figure>
                                         </div>
                                     </div>
                                 </div>
-        
+
                             </div>
                         </div>
                     </div>
@@ -381,7 +390,8 @@
     <script type="text/javascript" src="./script/isotope.min.js"></script>
     <script type="text/javascript" src="./script/jquery.nicescroll.min.js"></script>
     <script type="text/javascript" src="./script/functions.js"></script>
-    <script type="text/javascript" src="./script/commonhtml.js" ></script>
+    <script type="text/javascript" src="./script/commonhtml.js"></script>
+	 <script type="text/javascript" src="./script/myscript.js" ></script>
     <script>
         var slideIndex = 0;
         slideShow();
@@ -426,7 +436,7 @@
                 dots[i].className = dots[i].className.replace(" w3-white", "");
             }
             x[slideIndex - 1].style.display = "block";
-            dots[slideIndex - 1].className += " w3-white";            
+            dots[slideIndex - 1].className += " w3-white";
         }
 		if(window.location.search == '?appview'){
 			sessionStorage.setItem('appview','true'); 

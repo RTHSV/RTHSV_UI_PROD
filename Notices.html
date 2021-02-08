@@ -1,176 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
-  
-<!-- student-dashboard-settings21:55  -->
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Student Dashboard-Settings</title>
 
-    <!-- Css Files -->
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/font-awesome.css" rel="stylesheet">
-    <link href="css/flaticon.css" rel="stylesheet">
-    <link href="css/slick-slider.css" rel="stylesheet">
-    <link href="css/prettyphoto.css" rel="stylesheet">
-    <link href="build/mediaelementplayer.css" rel="stylesheet">
-    <link href="style.css" rel="stylesheet">
-    <link href="css/color.css" rel="stylesheet">
-    <link href="css/color-two.css" rel="stylesheet">
-    <link href="css/color-three.css" rel="stylesheet">
-    <link href="css/color-four.css" rel="stylesheet">
-    <link href="css/responsive.css" rel="stylesheet">
+<!-- student-dashboard-settings21:55  -->
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	<title>Student Dashboard-Settings</title>
+
+	<!-- Css Files -->
+	<link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/font-awesome.css" rel="stylesheet">
+	<link href="css/flaticon.css" rel="stylesheet">
+	<link href="css/slick-slider.css" rel="stylesheet">
+	<link href="css/prettyphoto.css" rel="stylesheet">
+	<link href="build/mediaelementplayer.css" rel="stylesheet">
+	<link href="style.css" rel="stylesheet">
+	<link href="css/color.css" rel="stylesheet">
+	<link href="css/color-two.css" rel="stylesheet">
+	<link href="css/color-three.css" rel="stylesheet">
+	<link href="css/color-four.css" rel="stylesheet">
+	<link href="css/responsive.css" rel="stylesheet">
 	<link href="css/mystyle.css" rel="stylesheet">
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-  </head>
-  <body>
-	
-    <!--// Main Wrapper \\-->
-    <div class="wm-main-wrapper">
-        
-        <!--// Header \\-->
+</head>
+
+<body>
+
+	<!--// Main Wrapper \\-->
+	<div class="wm-main-wrapper">
+
+		<!--// Header \\-->
 		<div id="headerSec"></div>
 		<!--// Header \\-->
 
 		<!--// Mini Header \\-->
 		<div class="wm-mini-header">
 			<span class="wm-blue-transparent"></span>
-			 <div class="container">
-			    <div class="row">
-				    <div class="col-md-12">
-				        <div class="wm-mini-title">
-				       		<h1>Notice Board</h1> 
-				        </div>
-				        <div class="wm-breadcrumb">
-				          	<ul>
-				          	 	<li><a href="./index.html">Home</a></li>
-				          	 	<li>Notice Board</li>
-				           	</ul>
-				        </div>      
-				    </div>
-			    </div>
-			</div>    
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="wm-mini-title">
+							<h1>Notice Board</h1>
+						</div>
+						<div class="wm-breadcrumb">
+							<ul>
+								<li><a href="./index.html">Home</a></li>
+								<li>Notice Board</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
-  		<!--// Mini Header \\-->
+		<!--// Mini Header \\-->
 
 		<!--// Main Content \\-->
 		<div class="wm-main-content">
 
-			<!--// Main Section \\-->
+			<!-- Notice Board [Start]-->
 			<div class="wm-main-section">
 				<div class="container">
+					<div class="wm-title-typoelements">
+						<h2>Notice <span>Board</span></h2>
+					</div>
 					<div class="row">
 						<aside class="col-md-3">
-							<div class="wm-student-dashboard-nav">
-								<div class="wm-student-nav">
-									<ul id="leftPanelUL">
-										<li>
-											<a href="#" id="common" onClick="return displayNoticeData(this)">
-												<i class="wmicon-book"></i>
-												Common Notices
-											</a>
-										</li>
-										<li>
-											<a href="#" id="FYJC_Science" onClick="return displayNoticeData(this)">
-												<i class="wmicon-book"></i>
-												FYJC Science Notice
-											</a>
-										</li>
-										<li>
-											<a href="#" id="SYJC_Science" onClick="return displayNoticeData(this)">
-												<i class="wmicon-book"></i>
-												SYJC Science Notice
-											</a>
-										</li>
-										<li>
-											<a href="#" id="FYJC_Commerce" onClick="return displayNoticeData(this)">
-												<i class="wmicon-book"></i>
-												FYJC Commerce Notice
-											</a>
-										</li>
-										<li>
-											<a href="#" id="SYJC_Commerce" onClick="return displayNoticeData(this)">
-												<i class="wmicon-book"></i>
-												SYJC Commerse Notice
-											</a>
-										</li>
-										<li>
-											<a href="#" id="Non-Teaching_Staff" onClick="return displayNoticeData(this)">
-												<i class="wmicon-book"></i>
-												Non-Teaching Staff
-											</a>
-										</li>
-										<li>
-											<a href="#" id="Teaching_Staff" onClick="return displayNoticeData(this)">
-												<i class="wmicon-book"></i>
-												Teaching Staff
-											</a>
-										</li>											
-									</ul>
-								</div>
-							</div>														
+							<div class="wm-tabs-listing wm-typography-element">
+								<ul class="nav nav-tabs" role="tablist">
+								    <li role="presentation" class="active"><a href="#general" id="common" aria-controls="form" role="tab" data-toggle="tab">General</a></li>
+								   	<li role="presentation"><a href="#fys" id="FYJC_Science" aria-controls="form" role="tab" data-toggle="tab">FYJC Science</a></li>
+								   	<li role="presentation"><a href="#sys" id="SYJC_Science" aria-controls="letter" role="tab" data-toggle="tab">SYJC Science</a></li>
+									<li role="presentation"><a href="#fyc" id="FYJC_Commerce"  aria-controls="letter" role="tab" data-toggle="tab">FYJC Commerce</a></li>
+									<li role="presentation"><a href="#syc" id="SYJC_Commerce"  aria-controls="letter" role="tab" data-toggle="tab">SYJC Commerce</a></li>
+									<li role="presentation"><a href="#nts" id="Non-Teaching_Staff"  aria-controls="letter" role="tab" data-toggle="tab">Non-Teaching Staff</a></li>
+									<li role="presentation"><a href="#ts"  id="Teaching_Staff" aria-controls="letter" role="tab" data-toggle="tab">Teaching Staff</a></li>
+								</ul>
+							</div>							
 						</aside>
-						<div class="col-md-9">
-							<div class="wm-student-settings-info">							
-								<div class="wm-student-dashboard-settings">
-									<div class="wm-plane-title" align="center">
-										<h2 style="text-decoration: underline;">Notice Board : <span id="classType"></span></h2>
-									</div>
-									<div id="noticeDisplay" align="center" style="height:800px"></div>
+						<div class="col-md-9">							
+							<div class="wm-promo-box wm-typography-element">								
+								<div id="noticeDisplay" style="height: 800px;">
+									<h1 class="text-center">No Notice is available.</h1>
 								</div>
-								
 							</div>
-						</div>					
+						</div>
 					</div>
 				</div>
 			</div>
-			<!--// Main Section \\-->
+			<!-- Notice Board [End ]-->
 
 		</div>
 		<!--// Main Content \\-->
 
 		<!--// Footer \\-->
-		 <div id="footerSec"></div>
-		 
+		<div id="footerSec"></div>
+
 		<!--// Footer \\-->
 
-	<div class="clearfix"></div>
-    </div>
-    <!--// Main Wrapper \\-->
+		<div class="clearfix"></div>
+	</div>
+	<!--// Main Wrapper \\-->
 
-  
-    <!-- ModalSearch Box -->
+
+	<!-- ModalSearch Box -->
 
 	<!-- jQuery (necessary for JavaScript plugins) -->
 	<script type="text/javascript" src="script/jquery.js"></script>
 	<script type="text/javascript" src="script/modernizr.js"></script>
-    <script type="text/javascript" src="script/bootstrap.min.js"></script>
-    <script type="text/javascript" src="script/jquery.prettyphoto.js"></script>
-    <script type="text/javascript" src="script/jquery.countdown.min.js"></script>
-    <script type="text/javascript" src="script/fitvideo.js"></script>
-    <script type="text/javascript" src="script/skills.js"></script>
-    <script type="text/javascript" src="script/slick.slider.min.js"></script>
-    <script type="text/javascript" src="script/waypoints-min.js"></script>
-    <script type="text/javascript" src="build/mediaelement-and-player.min.js"></script>
-    <script type="text/javascript" src="script/isotope.min.js"></script>
-    <script type="text/javascript" src="script/jquery.nicescroll.min.js"></script>
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
-    <script type="text/javascript" src="script/functions.js"></script>
+	<script type="text/javascript" src="script/bootstrap.min.js"></script>
+	<script type="text/javascript" src="script/jquery.prettyphoto.js"></script>
+	<script type="text/javascript" src="script/jquery.countdown.min.js"></script>
+	<script type="text/javascript" src="script/fitvideo.js"></script>
+	<script type="text/javascript" src="script/skills.js"></script>
+	<script type="text/javascript" src="script/slick.slider.min.js"></script>
+	<script type="text/javascript" src="script/waypoints-min.js"></script>
+	<script type="text/javascript" src="build/mediaelement-and-player.min.js"></script>
+	<script type="text/javascript" src="script/isotope.min.js"></script>
+	<script type="text/javascript" src="script/jquery.nicescroll.min.js"></script>
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+	<script type="text/javascript" src="script/functions.js"></script>
 	<script type="text/javascript" src="script/myscript.js"></script>
-	<script type="text/javascript" src="script/commonhtml.js" ></script>
+	<script type="text/javascript" src="script/commonhtml.js"></script>
 
 	<script>
 		getAllActiveNotices();
 	</script>
 
-  </body>
+</body>
 
 <!-- student-dashboard-settings21:55  -->
+
 </html>

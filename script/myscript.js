@@ -1,6 +1,12 @@
 var contextPathStud = "https://69txog4rl8.execute-api.ap-south-1.amazonaws.com/dev/S/";
 var slideIndex = 0;
 var timeoutvar;
+hideAppDetails()
+function hideAppDetails(){
+	if(sessionStorage.getItem('appview') == 'true'){
+		$(".playStoreIcon").hide();
+	}
+}
 function showSlides() {
 	var i;
 	var slides = document.getElementsByClassName("mySlides");
@@ -52,6 +58,7 @@ function getAllActiveNotices() {
 		success: function (response1) {
 			noticeList = response1;
 			displayNoticeData($("#common"));
+			console.log(noticeList);
 		},
 		error: function (response) {
 			alert("Error while download data");
@@ -60,15 +67,40 @@ function getAllActiveNotices() {
 	return false;
 }
 
+$(function (event) {
+	$('#common').click(function () {
+		displayNoticeData($(this));
+	});
+	$('#FYJC_Science').click(function () {
+		displayNoticeData($(this));
+	});
+	$('#SYJC_Science').click(function () {
+		displayNoticeData($(this));
+	});
+	$('#FYJC_Commerce').click(function () {
+		displayNoticeData($(this));
+	});
+	$('#SYJC_Commerce').click(function () {
+		displayNoticeData($(this));
+	});
+	$('#Non-Teaching_Staff').click(function () {
+		displayNoticeData($(this));
+	});
+	$('#Teaching_Staff').click(function () {
+		displayNoticeData($(this));
+	});
+});
+
 function displayNoticeData(obj) {
 	var isNotice = 1;
-	var notCnt = 0;
-	$("#leftPanelUL li").removeClass('active');
-	$(obj).parent().addClass("active");
-	$("#classType").html($(obj).html().trim().substr(27).trim());
+	var notCnt = 0;	
+	//$("#leftPanelUL li").removeClass('active');
+	//$(obj).parent().addClass("active");
+	//$("#classType").html($(obj).html().trim().substr(27).trim());
 	$("#noticeDisplay").html("");
 	$(noticeList).each(function (i, notice) {
 		if ($(obj).attr('id') == $(notice).attr('classFor')) {
+			$("#classType").html($(notice).attr('noticeSub'));
 			if (isNotice == 1) {
 				$("#noticeDisplay").html("<div class='loader' style='margin-top:70px'></div>");
 			}
@@ -79,10 +111,11 @@ function displayNoticeData(obj) {
 				url: contextPathStud + "downloadNotice",
 				success: function (response1) {
 					$("#noticeDisplay").find(".loader").remove();
+					$("#noticeDisplay").append('<div class="wm-typo-title"><h5>'+(++notCnt)+'. Subject : <span>'+$(notice).attr('noticeSub')+'</span></h5></div>');
 					if(sessionStorage.getItem('appview') == 'true'){
-						$("#noticeDisplay").append("<h2>Notice No." + (++notCnt) + " : " + $(notice).attr('noticeSub') + "</h2><input type='button' class='btn btn-primary' value='Download Notice for "+$(notice).attr('noticeSub')+"' data-respone="+response1+" onclick='return downloadNoticeApp(this)'><br><br>");
+						$("#noticeDisplay").append("<input type='button' class='btn btn-primary' value='Download Notice for "+$(notice).attr('noticeSub')+"' data-respone="+response1+" onclick='return downloadNoticeApp(this)'><br><br>");
 					}else{
-						$("#noticeDisplay").append("<h2>Notice No." + (++notCnt) + " : " + $(notice).attr('noticeSub') + "</h2><iframe width='100%' style='margin-bottom: 60px;' height='100%' src='data:application/pdf;base64, " + response1 + "'></iframe>");
+						$("#noticeDisplay").append("<iframe width='100%' style='margin-bottom: 60px;' height='100%' src='data:application/pdf;base64, " + response1 + "'></iframe>");
 					}
 				},
 				error: function (response) {
@@ -93,18 +126,10 @@ function displayNoticeData(obj) {
 		}
 	});
 	if (isNotice == 1)
-		$("#noticeDisplay").html("<h1> No Notice is available </h1>");
+		$("#noticeDisplay").html("<h1 class=\"text-center\"> No Notice is available </h1>");
 	return false;
 }
-function downloadNoticeApp(obj){
-	const linkSource = "data:application/pdf;base64,"+$(obj).attr('data-respone');
-	const downloadLink = document.createElement("a");
-	const fileName = "abc.pdf";
-	downloadLink.href = linkSource;
-	downloadLink.download = fileName;
-	downloadLink.click();﻿
-	
-}
+
 function viewStudentResult(obj) {
 	emptyResult();
 	if ($("#seatNo").val() == "") {

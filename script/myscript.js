@@ -4,7 +4,7 @@ var timeoutvar;
 hideAppDetails()
 function hideAppDetails(){
 	if(sessionStorage.getItem('appview') == 'true'){
-		$(".playStoreIcon").hide();
+		$(".nonAppviewClass").hide();
 	}
 }
 function showSlides() {

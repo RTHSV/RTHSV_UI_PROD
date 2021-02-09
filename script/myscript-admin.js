@@ -232,6 +232,14 @@ function getRowHtml(obj, index) {
 
 function addStudentData(obj) {
 	$("#confirmModal").modal('show');
+	$("#rollNo").val('')
+	$("#name").val('');
+	$("#mobileno").val('');
+	$("#emailid").val('');
+	$("#address").val('');
+	$("#addStudDetailsID").attr('disabled', false);
+	$("#addStudDetailsID").val('Save');
+	
 }
 function closeStudentPopUp() {
 	$("#confirmModal").modal('hide');

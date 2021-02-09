@@ -20,7 +20,7 @@ if(window.location.href.indexOf('/admin')!=-1) {
     isAdmin = true;
 }
 
-var socialIcons = '<div class="social-icon-bar">';
+var socialIcons = '<div class="social-icon-bar nonAppviewClass">';
 socialIcons +='<a href="javascript:void(0);" class="fb"><i class="fa fa-facebook"></i></a>';
 socialIcons +='<a href="javascript:void(0);" class="tw"><i class="fa fa-twitter"></i></a>';
 socialIcons +='<a href="javascript:void(0);" class="go"><i class="fa fa-google"></i></a>';
@@ -179,7 +179,7 @@ var footer = '<footer id="wm-footer" class="wm-footer-one">'+
                                         '<p>Check out my New PSD: FashionPlus - Fashion eCommerce: <a href="#">pic.twitter.com/xc445Ghyt</a></p>'+
                                         '<time datetime="2008-02-14 20:00" class="wm-color">4 hrs ago</time>'+
                                     '</li>'+
-                                    '<li class="playStoreIcon">'+
+                                    '<li class="nonAppviewClass">'+
                                         '<a target="_blank" href="https://play.google.com/store/apps/details?id=com.rthsv&amp;pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1">'+
 											'<img src="'+imgpt+'/images/social/applogo.png" style="height:60px;border-radius:10px" >'+
 										'</a>'+

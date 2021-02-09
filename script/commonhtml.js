@@ -44,6 +44,7 @@ var webSiteMenus = '<div class="collapse navbar-collapse" id="navbar-collapse-1"
                                     '<li page="About College"><a href="'+imgpt+'/about-us.html">About College</a></li>'+
                                     '<li page="Our Inspiration"><a href="'+imgpt+'/our-inspiration.html">Our Inspiration</a></li>'+
                                     '<li page="Board Of Executive"><a href="'+imgpt+'/board-of-executive.html">Board Of Executive</a></li>'+
+									'<li page="Privacy Policy"><a href="'+imgpt+'/privacypolicy.html">Privacy Policy</a></li>'+
                                 '</ul>'+
                             '</li>'+
                             '<li class="" page="Rules Page"><a href="'+imgpt+'/rules-page.html">Rules &amp; Regulations </a></li>'+

@@ -1,7 +1,7 @@
 var contextPathStud = "https://69txog4rl8.execute-api.ap-south-1.amazonaws.com/dev/S/";
 var slideIndex = 0;
 var timeoutvar;
-hideAppDetails()
+setTimeout(hideAppDetails, 200);
 function hideAppDetails(){
 	if(sessionStorage.getItem('appview') == 'true'){
 		$(".nonAppviewClass").hide();

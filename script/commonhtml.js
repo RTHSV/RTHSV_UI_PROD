@@ -211,84 +211,23 @@ if(!isAdmin) {
     $("#footerSec").html(footer);
 }
 
-var adminLeftPanel = '<div class="wm-student-dashboard-nav">'+
-						'<div class="wm-student-nav">'+
-							'<div class="wm-student-nav-text">'+
-								'<a href="javascript:void(0);" style="cursor: context-menu;">'+
-									'<i class="wmicon-three" style="font-size:18px">&nbsp;Admin Settings</i>'+
-								'</a>'+
-							'</div>'+
-							'<ul id="leftPanelUL">'+
-								'<li>'+
-									'<a href="javascript:void(0);" data-page="admin-Info.html" onClick=openAdminPage(this)>'+
-										'<i class="wmicon-avatar"></i>'+
-										'Student Information'+
-									'</a>'+
-								'</li>'+
-								'<li>'+
-									'<a href="javascript:void(0);" data-page="admin-uploaddata.html" onClick=openAdminPage(this)>'+
-										'<i class="wmicon-book"></i>'+
-										'Upload Student Info'+
-									'</a>'+
-								'</li>'+
-								'<li>'+
-									'<a href="javascript:void(0);" data-page="admin-studentresult.html" onClick=openAdminPage(this)>'+
-										'<i class="wmicon-book"></i>'+
-										'Upload Student Result'+
-									'</a>'+
-								'</li>'+
-								'<li>'+
-									'<a href="javascript:void(0);" data-page="admin-sendNotification.html" onClick=openAdminPage(this)>'+
-										'<i class="wmicon-favorite"></i>'+
-										'Send Notification'+
-									'</a>'+
-								'</li>'+
-								'<li>'+
-									'<a href="javascript:void(0);" data-page="admin-uploadNotices.html" onClick=openAdminPage(this)>'+
-										'<i class="wmicon-paper"></i>'+
-										'Upload Notices'+
-									'</a>'+
-								'</li>'+
-								'<li>'+
-									'<a href="javascript:void(0);" data-page="admin-changepassword.html" onClick=openAdminPage(this)>'+
-										'<i class="wmicon-three"></i>'+
-										'Change Password'+
-									'</a>'+
-								'</li>'+
-								'<li>'+
-									'<a href="admin-login.html">'+
-										'<i class="wmicon-arrow"></i>'+
-										'Logout'+
-									'</a>'+
-								'</li>'+
-							'</ul>'+
-						'</div>'+
-					'</div>';
-//$("#adminLeftPanel").html(adminLeftPanel);	
-//$("#leftPanelUL > li").find('[data-page="'+localStorage.getItem('act')+'"]').parent().addClass("active")
-function openAdminPage(obj){
-	// if($("#adminLeftPanel").length != 0){
-		localStorage.setItem('act',$(obj).attr('data-page'));
-		location.href=$(obj).attr('data-page');	
-	// }
-}
 setTimeout(hideAppDetails, 100);
 setTimeout(highlitMenu, 100);
 
 function openPage(obj){
 		if($(obj).parent().parent().attr('id') == 'mainmenu'){
-			localStorage.setItem('studact',$(obj).attr('data-href'));
+			sessionStorage.setItem('studact',$(obj).attr('data-href'));
 		}else{
-			localStorage.setItem('studact',$(obj).attr('data-href')+","+$(obj).parent().parent().parent().find('a').eq(0).attr('data-href'));
+			sessionStorage.setItem('studact',$(obj).attr('data-href')+","+$(obj).parent().parent().parent().find('a').eq(0).attr('data-href'));
 		}
 		location.href=$(obj).attr('data-href');	
 }	
 function highlitMenu(){
-	if(localStorage.getItem('studact') != null){
-		if(localStorage.getItem('studact').split(",") == 1){
-			$("#mainmenu > li").find('[data-href="'+localStorage.getItem('studact')+'"]').addClass("active");
+	if(sessionStorage.getItem('studact') != null){
+		if(sessionStorage.getItem('studact').split(",") == 1){
+			$("#mainmenu > li").find('[data-href="'+sessionStorage.getItem('studact')+'"]').addClass("active");
 		}else{		
-			localStorage.getItem('studact').split(",").forEach(function (iteam) {    
+			sessionStorage.getItem('studact').split(",").forEach(function (iteam) {    
 				$("#mainmenu > li").find('[data-href="'+iteam+'"]').addClass("active");
 			});
 		}

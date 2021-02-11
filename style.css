@@ -359,7 +359,7 @@ address { font-style: italic; }
 /* Logo */
 .wm-logo {
     float: left;
-    margin: 35px 0px 26px 0px;
+    margin: 15px 0px 11px 0px;
 }
 /* MainHeader */
 .wm-main-header {
@@ -464,11 +464,19 @@ address { font-style: italic; }
     font-size: 15px;
     color: #424242;
     font-weight: bold;
-    padding: 53px 20px 50px 20px;
+    padding: 12px;
     text-transform: uppercase;
+	cursor:pointer;
 }
-.navbar-nav > li:first-child > a,.wm-main-header .navbar-collapse { padding-left: 0px; }
-.navbar-nav > li:last-child > a { padding-right: 0px; }
+
+.navbar-nav > li > a.active {
+   
+    color: white;
+	border-radius: 4px;
+	background-color: #b99663;
+    border: 1px solid #9d7f53;
+}
+
 .navbar-nav li:hover > .wm-dropdown-menu {
     opacity: 1;
     -webkit-transform: translateY(0px);
@@ -517,6 +525,15 @@ address { font-style: italic; }
     font-weight: 300;
     padding: 10px 10px;
     width: 100%;
+	cursor:pointer;
+}
+
+.wm-dropdown-menu li a.active {
+     color: white;
+	border-radius: 4px;
+	background-color: #b99663;
+    border: 1px solid #9d7f53;
+
 }
 .wm-dropdown-menu li:last-child a { border: none; }
 /* Mega Menu */

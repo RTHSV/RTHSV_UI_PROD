@@ -1,12 +1,7 @@
 var contextPathStud = "https://69txog4rl8.execute-api.ap-south-1.amazonaws.com/dev/S/";
 var slideIndex = 0;
 var timeoutvar;
-setTimeout(hideAppDetails, 200);
-function hideAppDetails(){
-	if(sessionStorage.getItem('appview') == 'true'){
-		$(".nonAppviewClass").hide();
-	}
-}
+
 function showSlides() {
 	var i;
 	var slides = document.getElementsByClassName("mySlides");
@@ -113,7 +108,7 @@ function displayNoticeData(obj) {
 					$("#noticeDisplay").find(".loader").remove();
 					$("#noticeDisplay").append('<div class="wm-typo-title"><h5>'+(++notCnt)+'. Subject : <span>'+$(notice).attr('noticeSub')+'</span></h5></div>');
 					if(sessionStorage.getItem('appview') == 'true'){
-						$("#noticeDisplay").append("<input type='button' class='btn btn-primary' value='Download Notice for "+$(notice).attr('noticeSub')+"' data-respone="+response1+" onclick='return downloadNoticeApp(this)'><br><br>");
+						$("#noticeDisplay").append("<input type='button' class='btn-result' value='Download Notice for "+$(notice).attr('noticeSub')+"' data-respone="+response1+" onclick='return downloadNoticeApp(this)'><br><br>");
 					}else{
 						$("#noticeDisplay").append("<iframe width='100%' style='margin-bottom: 60px;' height='100%' src='data:application/pdf;base64, " + response1 + "'></iframe>");
 					}

@@ -21,49 +21,49 @@ if(window.location.href.indexOf('/admin')!=-1) {
 }
 
 var socialIcons = '<div class="social-icon-bar nonAppviewClass">';
-socialIcons +='<a href="javascript:void(0);" class="fb"><i class="fa fa-facebook"></i></a>';
-socialIcons +='<a href="javascript:void(0);" class="tw"><i class="fa fa-twitter"></i></a>';
-socialIcons +='<a href="javascript:void(0);" class="go"><i class="fa fa-google"></i></a>';
-socialIcons +='<a href="javascript:void(0);" class="li"><i class="fa fa-linkedin"></i></a>';
-socialIcons +='<a href="javascript:void(0);" class="yt"><i class="fa fa-youtube"></i></a>';
+socialIcons +='<a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://rthsv.com" class="fb"><i class="fa fa-facebook"></i></a>';
+socialIcons +='<a target="_blank" href="http://twitter.com/share?text=https://rthsv.com Best college in Navi-Mumbai&amp;url=https://rthsv.com/&amp;hashtags=College,Navi-Mumbai" class="tw"><i class="fa fa-twitter"></i></a>';
+socialIcons +='<a target="_blank" href="https://api.whatsapp.com/send?phone=+919892125742&amp;text=Hi" class="go"><i class="fa fa-whatsapp"></i></a>';
+socialIcons +='<a target="_blank" href="https://play.google.com/store/apps/details?id=com.rthsv" class="li"><i class="fa fa-play"></i></a>';
+socialIcons +='<a target="_blank" href="mailto:principal@rthsv.com" class="yt"><i class="fa fa-envelope"></i></a>';
 socialIcons +='</div>';
 
 var webSiteMenus = '<div class="collapse navbar-collapse" id="navbar-collapse-1">'+
-                        '<ul class="nav navbar-nav">'+
-                            '<li class="" page="Home"><a href="'+imgpt+'/index.html">Home</a></li>'+
-                            '<li class="" page="Admission"><a href="'+imgpt+'/admission.html">Admission</a></li>'+
-                            '<li class="" page="Student Info"><a href="javascript:void(0);">Student Info</a>'+
+                        '<ul class="nav navbar-nav" id="mainmenu">'+
+                            '<li class="" page="Home"><a onClick="openPage(this)" data-href="'+imgpt+'/index.html">Home</a></li>'+
+                            '<li class="" page="Admission"><a onClick="openPage(this)" data-href="'+imgpt+'/admission.html">Admission</a></li>'+
+                            '<li class="" page="Student Info"><a data-href="studentInfo">Student Info</a>'+
                                 '<ul class="wm-dropdown-menu">'+
-                                    '<li page="Notices"><a href="'+imgpt+'/Notices.html">Notice Board</a></li>'+
-                                    '<li page="Exam Result"><a href="'+imgpt+'/ExamResult.html">Exam Results</a></li>'+
+                                    '<li page="Notices"><a onClick="openPage(this)" data-href="'+imgpt+'/Notices.html">Notice Board</a></li>'+
+                                    '<li page="Exam Result"><a onClick="openPage(this)" data-href="'+imgpt+'/ExamResult.html">Exam Results</a></li>'+
                                 '</ul>'+
                             '</li>'+
-                            '<li class="" page="Contact Us"><a href="'+imgpt+'/contact-us.html">Contact Us</a></li>'+
-                            '<li class="" page="About Us"><a href="javascript:void(0);">About Us</a>'+
+                            '<li class="" page="Contact Us"><a onClick="openPage(this)" data-href="'+imgpt+'/contact-us.html">Contact Us</a></li>'+
+                            '<li class="" page="About Us"><a data-href="aboutus">About Us</a>'+
                                 '<ul class="wm-dropdown-menu">'+
-                                    '<li page="About College"><a href="'+imgpt+'/about-us.html">About College</a></li>'+
-                                    '<li page="Our Inspiration"><a href="'+imgpt+'/our-inspiration.html">Our Inspiration</a></li>'+
-                                    '<li page="Board Of Executive"><a href="'+imgpt+'/board-of-executive.html">Board Of Executive</a></li>'+
-									'<li page="Privacy Policy"><a href="'+imgpt+'/privacypolicy.html">Privacy Policy</a></li>'+
+                                    '<li page="About College"><a onClick="openPage(this)" data-href="'+imgpt+'/about-us.html">About College</a></li>'+
+                                    '<li page="Our Inspiration"><a onClick="openPage(this)" data-href="'+imgpt+'/our-inspiration.html">Our Inspiration</a></li>'+
+                                    '<li page="Board Of Executive"><a onClick="openPage(this)" data-href="'+imgpt+'/board-of-executive.html">Board Of Executive</a></li>'+
+									'<li page="Privacy Policy"><a onClick="openPage(this)" data-href="'+imgpt+'/privacypolicy.html">Privacy Policy</a></li>'+
                                 '</ul>'+
                             '</li>'+
-                            '<li class="" page="Rules Page"><a href="'+imgpt+'/rules-page.html">Rules &amp; Regulations </a></li>'+
-                            '<li class="" page="FAQs"><a href="'+imgpt+'/faq-page.html">FAQ&acute;s</a></li>'+
+                            '<li class="" page="Rules Page"><a onClick="openPage(this)" data-href="'+imgpt+'/rules-page.html">Rules &amp; Regulations </a></li>'+
+                            '<li class="" page="FAQs"><a onClick="openPage(this)" data-href="'+imgpt+'/faq-page.html">FAQ&acute;s</a></li>'+
                         '</ul>'+
                     '</div>';
 
 var adminMenus = '<div class="collapse navbar-collapse" id="navbar-collapse-1">'+
-                    '<ul class="nav navbar-nav">'+
-                        '<li class="" page=""><a href="javascript:void(0);">Manage Student</a>'+
+                    '<ul class="nav navbar-nav" id="mainmenu">'+
+                        '<li class="" page=""><a href="javascript:void(0);" data-href="managestud">Manage Student</a>'+
                             '<ul class="wm-dropdown-menu">'+
-                                '<li page=""><a href="javascript:void(0);" data-page="admin-Info.html" onclick="openAdminPage(this)">Student Information</a></li>'+
-                                '<li page=""><a href="javascript:void(0);" data-page="admin-uploaddata.html" onclick="openAdminPage(this)">Upload Student Info</a></li>'+
-                                '<li page=""><a href="javascript:void(0);" data-page="admin-studentresult.html" onclick="openAdminPage(this)">Upload Student Result</a></li>'+
+                                '<li page=""><a href="javascript:void(0);" data-href="./admin-Info.html" onclick="openPage(this)">Student Information</a></li>'+
+                                '<li page=""><a href="javascript:void(0);" data-href="./admin-uploaddata.html" onclick="openPage(this)">Upload Student Info</a></li>'+
+                                '<li page=""><a href="javascript:void(0);" data-href="./admin-studentresult.html" onclick="openPage(this)">Upload Student Result</a></li>'+
                             '</ul>'+
                         '</li>'+                        
-                        '<li class="" page=""><a href="javascript:void(0);" data-page="admin-sendNotification.html" onclick="openAdminPage(this)">Notification</a></li>'+
-                        '<li class="" page=""><a href="javascript:void(0);" data-page="admin-uploadNotices.html" onclick="openAdminPage(this)">Notices</a></li>'+
-                        '<li class="" page=""><a href="javascript:void(0);" data-page="admin-changepassword.html" onclick="openAdminPage(this)">Change Password</a></li>'+
+                        '<li class="" page=""><a href="javascript:void(0);" data-href="./admin-sendNotification.html" onclick="openPage(this)">Notification</a></li>'+
+                        '<li class="" page=""><a href="javascript:void(0);" data-href="./admin-uploadNotices.html" onclick="openPage(this)">Notices</a></li>'+
+                        '<li class="" page=""><a href="javascript:void(0);" data-href="./admin-changepassword.html" onclick="openPage(this)">Change Password</a></li>'+
                         '<li class="" page=""><a href="./admin-login.html">Logout</a></li>'+
                     '</ul>'+
                 '</div>';
@@ -95,7 +95,7 @@ var header = '<header id="wm-header" class="wm-header-one" style="z-index: 1 !im
                     '<div class="container">'+
                         '<div class="row">'+
                             '<div class="col-md-2"><a href="'+imgpt+'/index.html" class="wm-logo"><img src="'+imgpt+'/images/Logo.PNG" alt="'+title+'" title="'+title+'" width="100px"></a></div>'+
-                            '<div class="col-md-10">'+
+                            '<div class="col-md-10" style="margin-top:30px">'+
                                 '<nav class="navbar navbar-default">'+
                                     '<div class="navbar-header">'+
                                         '<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="true">'+
@@ -271,5 +271,34 @@ function openAdminPage(obj){
 		localStorage.setItem('act',$(obj).attr('data-page'));
 		location.href=$(obj).attr('data-page');	
 	// }
-}			   
+}
+setTimeout(hideAppDetails, 100);
+setTimeout(highlitMenu, 100);
+
+function openPage(obj){
+		if($(obj).parent().parent().attr('id') == 'mainmenu'){
+			localStorage.setItem('studact',$(obj).attr('data-href'));
+		}else{
+			localStorage.setItem('studact',$(obj).attr('data-href')+","+$(obj).parent().parent().parent().find('a').eq(0).attr('data-href'));
+		}
+		location.href=$(obj).attr('data-href');	
+}	
+function highlitMenu(){
+	if(localStorage.getItem('studact') != null){
+		if(localStorage.getItem('studact').split(",") == 1){
+			$("#mainmenu > li").find('[data-href="'+localStorage.getItem('studact')+'"]').addClass("active");
+		}else{		
+			localStorage.getItem('studact').split(",").forEach(function (iteam) {    
+				$("#mainmenu > li").find('[data-href="'+iteam+'"]').addClass("active");
+			});
+		}
+	}else{
+		$("#mainmenu > li").find('[data-href=".'+location.href.substr(location.href.lastIndexOf("/"))+'"]').addClass("active");
+	}
+}
+function hideAppDetails(){
+	if(sessionStorage.getItem('appview') == 'true'){
+		$(".nonAppviewClass").hide();
+	}
+}		   
 		

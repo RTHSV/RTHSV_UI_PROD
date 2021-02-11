@@ -47,11 +47,13 @@ function getAllActiveNotices(){
 }*/
 var noticeList;
 function getAllActiveNotices() {
+	$("#noticePleasewait").show();
 	$.ajax({
 		type: 'POST',
 		url: contextPathStud + "getAllActiveNotices",
 		success: function (response1) {
 			noticeList = response1;
+			$("#noticePleasewait").hide();
 			displayNoticeData($("#common"));
 			console.log(noticeList);
 		},

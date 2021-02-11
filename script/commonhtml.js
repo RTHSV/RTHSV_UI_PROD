@@ -232,7 +232,11 @@ function highlitMenu(){
 			});
 		}
 	}else{
-		$("#mainmenu > li").find('[data-href=".'+location.href.substr(location.href.lastIndexOf("/"))+'"]').addClass("active");
+		if(location.href.substr(location.href.lastIndexOf("/")).length == 1){
+			$("#mainmenu > li").find('[data-href=".index"]').addClass("active");
+		}else{
+			$("#mainmenu > li").find('[data-href=".'+location.href.substr(location.href.lastIndexOf("/"))+'"]').addClass("active");
+		}
 	}
 }
 function hideAppDetails(){

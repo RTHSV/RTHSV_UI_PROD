@@ -233,7 +233,7 @@ function highlitMenu(){
 		}
 	}else{
 		if(location.href.substr(location.href.lastIndexOf("/")).length == 1){
-			$("#mainmenu > li").find('[data-href=".index"]').addClass("active");
+			$("#mainmenu > li").find('[data-href="./index.html"]').addClass("active");
 		}else{
 			$("#mainmenu > li").find('[data-href=".'+location.href.substr(location.href.lastIndexOf("/"))+'"]').addClass("active");
 		}

@@ -174,3 +174,44 @@ function emptyResult() {
 	$('#lblSeatNo').html('');
 	$('#lblRes').html('');
 }
+function sendTalkToUsmsg(obj){
+	if($("#fname").val().trim() == ""){
+		alert("Please enter Name");
+		$("#fname").focus();
+		return false;
+	}
+	if($("#emailid").val().trim() == ""){
+		alert("Please enter Email Id");
+		$("#emailid").focus();
+		return false;
+	}if($("#phoneno").val().trim() == ""){
+		alert("Please enter Phone no");
+		$("#phoneno").focus();
+		return false;
+	}if($("#message").val().trim() == ""){
+		alert("Please enter message");
+		$("#message").focus();
+		return false;
+	}
+		$(obj).attr('disabled', true);
+		$(obj).val('Please Wait ....');
+		var map = {};
+		map["name"]=$("#fname").val().trim();
+		map["emailid"]=$("#emailid").val().trim();
+		map["phoneno"]=$("#phoneno").val().trim();
+		map["message"]=$("#message").val().trim();
+		$.ajax({
+			type: 'POST',
+			data: JSON.stringify(map),
+			url: contextPathStud + "contactusdata",
+			success: function (response1) {
+				alert(response1);
+				location.reload();				
+			},
+			error: function (response) {
+				alert("Error occur while processing your request. Please contact admin");
+				$(obj).attr('disabled', false);
+				$(obj).val('Send Message');
+			}
+		});
+}

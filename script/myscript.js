@@ -53,17 +53,19 @@ function getAllActiveNotices(){
 var noticeList;
 function getAllActiveNotices() {
 	$("#noticePleasewait").show();
+	$("#noticeHeader").hide();
 	$.ajax({
 		type: 'POST',
 		url: contextPathStud + "getAllActiveNotices",
 		success: function (response1) {
 			noticeList = response1;
 			$("#noticePleasewait").hide();
+			$("#noticeHeader").show();
 			displayNoticeData($("#common"));
 			console.log(noticeList);
 		},
 		error: function (response) {
-			alert("Error while download data");
+			alert("Error while getting Notices Data.Please try after some time");
 		}
 	});
 	return false;

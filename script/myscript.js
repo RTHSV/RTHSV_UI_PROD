@@ -13,15 +13,20 @@ function showSlides() {
 	if (slideIndex > slides.length) { slideIndex = 1 }
 	if (slideIndex == 0) { slideIndex = slides.length }
 	for (i = 0; i < dots.length; i++) {
-		dots[i].className = dots[i].className.replace(" active1", "");
+		dots[i].className = dots[i].className.replace(" w3-white", "");
 	}
-	slides[slideIndex - 1].style.display = "contents";
-	dots[slideIndex - 1].className += " active1";
+	slides[slideIndex - 1].style.display = "block";
+	dots[slideIndex - 1].className += " w3-white";
 	timeoutvar = setTimeout(showSlides, 2000); // Change image every 2 seconds
 }
 function plusImage(index) {
 	stopSlideShow();
 	slideIndex = parseInt(index) + parseInt(slideIndex) - 1;
+	showSlides();
+}
+function slidePosition(index) {
+	stopSlideShow();
+	slideIndex = parseInt(index)- 1;
 	showSlides();
 }
 function stopSlideShow() {

@@ -54,6 +54,12 @@
 								</div>
 							</div>	
 							<div class="row">
+								<div class="form-group name1 col-md-6">
+									<label for="exampleInputEmail1" class="formText">Upload PDF File(which will be send in email attachment)</label>
+									<input type="file" id="noticePDF" accept = "application/pdf" onchange="generateBAse64()"/>
+								</div>
+							</div>
+							<div class="row">
 								<div class="form-group col-md-12" >
 									<label for="exampleInputEmail1" class="formText">Enter message to send.</label>
 									<textarea id="message" style="width:100%;height:300px"></textarea>

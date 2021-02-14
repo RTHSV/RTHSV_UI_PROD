@@ -337,16 +337,28 @@ function uploadNotices(obj) {
 	});
 }
 function sendMessageToNewsLetter(obj){
+	
+	var fileTag = document.getElementById("noticePDF");
+	if (fileTag.files.length == 0) {
+		alert("Please Upload PDF file contain NewLetter details");
+		return false;
+	}
+	if (fileTag.files[0].name.substr(fileTag.files[0].name.lastIndexOf("."), fileTag.files[0].name.length).toUpperCase() != ".PDF") {
+		alert("Only PDF file are allowed for News Letter");
+		return false;
+	}
 	if($("#message").val().trim() == ""){
 		alert("Please enter some Message to send");
 		return false;
 	}
 	var str = "Are you sure, You want to send below message to subscribed People.";
 	if (confirm(str)) {
+		var pdfFile = pdfFileVal.substr(pdfFileVal.indexOf(",") + 1);
 		$(obj).attr('disabled', true);
 		$(obj).val('Please Wait..');
 		var map = {};
 		map["message"] = $("#message").val();
+		map["pdfFile"] = pdfFile;
 		map["token"] = sessionStorage.getItem("rthsv_token");
 		$.ajax({
 			type: 'POST',

@@ -62,7 +62,12 @@ var adminMenus = '<div class="collapse navbar-collapse" id="navbar-collapse-1">'
                                 '<li page=""><a href="javascript:void(0);" data-href="./admin-studentresult.html" onclick="openPage(this)">Upload Student Result</a></li>'+
                             '</ul>'+
                         '</li>'+                        
-                        '<li class="" page=""><a href="javascript:void(0);" data-href="./admin-sendNotification.html" onclick="openPage(this)">Notification</a></li>'+
+                        '<li class="" page=""><a href="javascript:void(0);" data-href="notification">Notification</a>'+
+							'<ul class="wm-dropdown-menu">'+
+                                '<li page=""><a href="javascript:void(0);" data-href="./admin-sendNotification.html" onclick="openPage(this)">Notification to College</a></li>'+
+                                '<li page=""><a href="javascript:void(0);" data-href="./admin-newslettersubscription.html" onclick="openPage(this)">Notification to News Letter</a></li>'+
+                            '</ul>'+						
+						'</li>'+
                         '<li class="" page=""><a href="javascript:void(0);" data-href="./admin-uploadNotices.html" onclick="openPage(this)">Notices</a></li>'+
                         '<li class="" page=""><a href="javascript:void(0);" data-href="./admin-changepassword.html" onclick="openPage(this)">Change Password</a></li>'+
                         '<li class="" page=""><a href="./admin-login.html">Logout</a></li>'+
@@ -144,8 +149,8 @@ var footer = '<footer id="wm-footer" class="wm-footer-one">'+
                             '<div class="col-md-12">'+
                                 '<form method="post" action="javascript:void(0);">'+
                                     '<i class="wmicon-interface2"></i>'+
-                                    '<input type="text" placeholder="Enter your e-mail address">'+
-                                    '<input type="submit" value="Subscribe to our newsletter">'+
+                                    '<input type="text" id="newsLetterEmailID" placeholder="Enter your e-mail address">'+
+                                    '<input type="submit" onclick="return subscribeNewsLetter(this)" value="Subscribe to our newsletter">'+
                                 '</form>'+
                             '</div>'+
                         '</div>'+
@@ -240,5 +245,5 @@ function hideAppDetails(){
 	if(sessionStorage.getItem('appview') == 'true'){
 		$(".nonAppviewClass").hide();
 	}
-}		   
+}	
 		

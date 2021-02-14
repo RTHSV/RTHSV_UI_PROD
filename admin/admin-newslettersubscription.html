@@ -40,52 +40,45 @@
 		<!--// Header \\-->
 		<hr>
 		<!--// Main Content \\-->
-		<div class="wm-main-content" style="padding: 0 !important;">
+		<div class="wm-main-content">
 
 			<!--// Main Section \\-->
 			<div class="wm-main-section">
 				<div class="container">
-					<div class="wm-form-wrap wm-typography-element">
+					<div class="row">
+						<div class="wm-form-wrap wm-typography-element">
 						<div class="col-md-12">
 							<div class="row">
 								<div class="wm-title-typoelements">
-									<h2>Upload Student Information</h2>
+									<h2>Send News Letter to Subscribed Email-ID</h2>
 								</div>
-							</div>						    
+							</div>	
 							<div class="row">
-								<div class="form-group name1 col-md-6">
-									<label for="exampleInputEmail1" class="formText">Upload for Class:</label>
-									<select name="upladClass" id="upladClass"  class="form-control">
-										<option value="FYJC_Science">FYJC Science</option>
-										<option value="SYJC_Science">SYJC Science</option>
-										<option value="FYJC_Commerce">FYJC Commerce</option>
-										<option value="SYJC_Commerce">SYJC Commerce</option>
-										<option value="Teaching_Staff">Teaching Staff</option>
-										<option value="Non_Teaching_Staff">Non-Teaching Staff</option>
-									</select>
+								<div class="form-group col-md-12" >
+									<label for="exampleInputEmail1" class="formText">Enter message to send.</label>
+									<textarea id="message" style="width:100%;height:300px"></textarea>
 								</div>
-
-								<div class="form-group name2 col-md-6">
-									<label for="exampleInputEmail1## Heading ##" class="formText">Override if Roll No Exists:</label>									
-									<select name="overiderollno" id="overiderollno"  class="form-control">										
-										<option value="Y">Yes</option>
-										<option value="N">No</option>
-									</select>
-								</div>
-							</div>
-							<div class="row">
-								<div class="form-group name1 col-md-12">
-									<label for="exampleInputEmail1" class="formText">JSON Data to upload:</label>
-									<textarea style="width:100%;height:300px" id="jsonDataUpload"></textarea>
-								</div>
-							</div>
+							</div> 
 							<div class="row">
 								<div class="form-group col-md-6" style="text-align:right">
-									<input type="button" value="Upload Student Details" class="btn-result" onclick="return uploadStudentData(this)">
+									<input type="button" value="Send Message" class="btn-result" onclick="return sendMessageToNewsLetter(this)">
 								</div>
-							</div> 							
+							</div> 
+							<div class="row"><br><br><br>	
+								<label for="exampleInputEmail1" class="formText"><h1>List of Subscribed Email-ID for News Letter.</h1></label>
+								<table id="displayTableDetails" class="table table-striped table-bordered table-hover">
+									<thead class="thead-dark">
+										<th><a href="javascript:void(0)" style="cursor: pointer;">#</a></th>
+										<th><a href="javascript:void(0)" style="cursor: pointer;">Email ID</a></th>									
+									</thead>
+									<tbody class="tb-text"></tbody>
+								</table>	
+							</div>
 						</div>
+						
 					</div>
+					
+					
 				</div>
 			</div>
 			<!--// Main Section \\-->
@@ -102,7 +95,8 @@
     </div>
     <!--// Main Wrapper \\-->
 
-    
+   
+    <!-- ModalLogin Box -->
 
     <!-- ModalSearch Box -->
     <div class="modal fade" id="ModalSearch" tabindex="-1" role="dialog">
@@ -142,8 +136,19 @@
     <script type="text/javascript" src="../script/jquery.nicescroll.min.js"></script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
     <script type="text/javascript" src="../script/functions.js"></script>
+	<script type="text/javascript" src="../script/myutil.js"></script>
 	<script type="text/javascript" src="../script/myscript-admin.js"></script>
 	<script type="text/javascript" src="../script/commonhtml.js" id="inner"></script>
+	<script>
+	fetchNewsLetterData();
+	$(document).ready(function(){
+
+		  $("#displayTableDetails").find('a').click(function() { 
+			sortTableDetails(this);
+			return false;
+		});
+    });
+	</script>
   </body>
 
 <!-- student-dashboard-statement21:55  -->

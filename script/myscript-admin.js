@@ -336,6 +336,53 @@ function uploadNotices(obj) {
 		}
 	});
 }
+function sendMessageToNewsLetter(obj){
+	if($("#message").val().trim() == ""){
+		alert("Please enter some Message to send");
+		return false;
+	}
+	var str = "Are you sure, You want to send below message to subscribed People.";
+	if (confirm(str)) {
+		$(obj).attr('disabled', true);
+		$(obj).val('Please Wait..');
+		var map = {};
+		map["message"] = $("#message").val();
+		map["token"] = sessionStorage.getItem("rthsv_token");
+		$.ajax({
+			type: 'POST',
+			url: contextPath + "sendNotificationToNewsLetter",
+			data: JSON.stringify(map),
+			success: function (response) {
+				alert(response);
+				location.reload();
+			},
+			error: function (response) {
+				alert("Error while sending Notification");
+				$(obj).attr('disabled', false);
+				$(obj).val('Send Message');
+				validateFail(response);
+			}
+		});
+	}
+	return false;	
+}
+function fetchNewsLetterData(){
+	$.ajax({
+		type: 'POST',
+		data: '{"token":"' + sessionStorage.getItem("rthsv_token") + '"}',
+		url: contextPath + "getAllNewLetterSubscriptionDetails",
+		success: function (response1) {
+			$("#displayTableDetails tbody").html('');
+			$.each(response1, function (key, response) {
+				$("#displayTableDetails tbody").append("<tr><td data-type='number'>" + (++key) + "</td><td>" + response + "</td></tr>");
+			});
+		},
+		error: function (response) {
+			alert("Error while download data");
+			validateFail(response);
+		}
+	});	
+}
 
 function fetchNoticeData() {
 	$.ajax({

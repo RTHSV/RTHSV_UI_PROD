@@ -222,3 +222,36 @@ function sendTalkToUsmsg(obj){
 			}
 		});
 }
+var validation = {
+    isEmailAddress:function(str) {
+        var pattern =/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        return pattern.test(str);  // returns a boolean
+    },
+   
+};
+function subscribeNewsLetter(obj){	
+	if (!validation.isEmailAddress($("#newsLetterEmailID").val().trim())) {
+		alert("Please Enter valid Email ID");
+		$("#newsLetterEmailID").focus();
+		return false;
+	}	
+	$(obj).attr('disabled', true);
+	$(obj).val('Please Wait ....');
+	$.ajax({
+		type: 'POST',
+		data: '{"emailID":"' + $("#newsLetterEmailID").val().trim() + '"}',
+		url: contextPathStud + "newsLetterSubscription",
+		success: function (response1) {
+			alert(response1);
+			$("#newsLetterEmailID").val('');
+			$(obj).attr('disabled', false);
+			$(obj).val('Subscribe to our newsletter');			
+		},
+		error: function (response) {
+			alert("Error occur while processing your request. Please contact admin");
+			$(obj).attr('disabled', false);
+			$(obj).val('Subscribe to our newsletter');
+		}
+	});
+	return false;
+}	

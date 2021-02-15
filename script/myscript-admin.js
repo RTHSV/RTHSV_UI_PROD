@@ -529,3 +529,21 @@ function updatePass(obj) {
 	});
 	return false;
 }
+function fetchAllStudentResultInfo(){
+		$.ajax({
+		type: 'POST',
+		data: '{"token":"' + sessionStorage.getItem("rthsv_token") + '"}',
+		url: contextPath + "getAllStudentResult",
+		success: function (response1) {
+			$("#displayTableDetails tbody").html('');
+			$.each(response1, function (key, response) {
+				var newRow = "<tr><td data-type='number'>" + (++key) + "</td><td>" + $(response).attr("seatNo") + "</td><td>" + $(response).attr("studName") + "</td><td>" + $(response).attr("classFor") + "</td><td>" + $(response).attr("passingClass") + "</td><td>" + $(response).attr("result") + "</td></tr>";
+				$("#displayTableDetails tbody").append(newRow);
+			});
+		},
+		error: function (response) {
+			alert("Error while fetching student result data");
+			validateFail(response);
+		}
+	});	
+}

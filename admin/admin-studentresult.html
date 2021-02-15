@@ -67,6 +67,22 @@
                     onclick="return uploadStudentResult(this)">
                 </div>
               </div>
+			  <div class="row"><br><br>
+					<label for="exampleInputEmail1" class="formText"><h1>Results uploaded till Now.</h1>
+						<input id="Search" placeholder="Type to filter records"  type="text" required>
+					</label>
+					<table id="displayTableDetails" class="table table-striped table-bordered table-hover">
+						<thead class="thead-dark">
+							<th><a href="javascript:void(0)" style="cursor: pointer;">#</a></th>
+							<th><a href="javascript:void(0)" style="cursor: pointer;">Seat No.</a></th>									
+							<th><a href="javascript:void(0)" style="cursor: pointer;">Student Name</a></th>									
+							<th><a href="javascript:void(0)" style="cursor: pointer;">Class</a></th>									
+							<th><a href="javascript:void(0)" style="cursor: pointer;">Passing Class</a></th>									
+							<th><a href="javascript:void(0)" style="cursor: pointer;">Result</a></th>									
+						</thead>
+						<tbody class="tb-text"></tbody>
+					</table>	
+				</div>
             </div>
           </div>
         </div>
@@ -102,6 +118,22 @@
   <script type="text/javascript" src="../script/functions.js"></script>
   <script type="text/javascript" src="../script/myscript-admin.js"></script>
   <script type="text/javascript" src="../script/commonhtml.js" id="inner"></script>
+  <script type="text/javascript" src="../script/myutil.js"></script>
+  <script>
+	$(document).ready(function () {
+		$("#Search").on("keyup", function () {
+			var value = $(this).val().toLowerCase();
+			$("#displayTableDetails tbody tr").filter(function () {
+				$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+			});
+		});
+		$("#displayTableDetails").find('a').click(function () {
+			sortTableDetails(this);
+			return false;
+		});
+		fetchAllStudentResultInfo();
+	});
+  </script>
 </body>
 
 <!-- student-dashboard-statement21:55  -->

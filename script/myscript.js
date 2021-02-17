@@ -254,4 +254,24 @@ function subscribeNewsLetter(obj){
 		}
 	});
 	return false;
+}
+function showPaymentinfo(){
+	try{
+		var jsonData = JSON.parse(atob(location.search.substr(1)));
+		$.each(jsonData, function(key, val) {
+		  $("#paymentInfo").append('<div class="wm-article">'+
+				'<ul>'+
+					'<li class="wm-profile-start">'+
+						'<div class="wm-profile-detail-info">'+
+							'<h6><a href="#">'+key+'</a></h6>'+
+						'</div>'+
+					'</li>'+
+					'<li><a href="#" class="wm-edit-icon">'+val+'</a></li>'+
+				'</ul>'+
+			'</div>');
+		});
+	}catch(err) {
+		alert("Your Session has been expire.");
+		location.href="index.html";
+	}
 }	

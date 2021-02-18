@@ -259,6 +259,9 @@ function showPaymentinfo(){
 	try{
 		var jsonData = JSON.parse(atob(location.search.substr(1)));
 		$.each(jsonData, function(key, val) {
+			if(key == 'Transaction ID'){
+				$("#dwnid").attr('data-id',val)
+			}
 		  $("#paymentInfo").append('<div class="wm-article">'+
 				'<ul>'+
 					'<li class="wm-profile-start">'+
@@ -274,4 +277,33 @@ function showPaymentinfo(){
 		alert("Your Session has been expire.");
 		location.href="index.html";
 	}
+}
+function downloadPayInvoice(obj){
+	$(obj).attr('disabled', true);
+	$(obj).val('Please Wait ....');
+	$.ajax({
+		type: 'POST',
+		data: '{"id":"' + $(obj).attr('data-id') + '"}',
+		url: contextPathStud + "downloadInvoice",
+		success: function (response1) {
+			if (response1.startsWith("Sorry!")) {
+				alert(response1);				
+			}else{
+				const linkSource = "data:application/pdf;base64,"+response1.replaceAll('"','');
+				const downloadLink = document.createElement("a");
+				const fileName = "RTHSV_Invoice_"+$(obj).attr('data-id')+".pdf";
+				downloadLink.href = linkSource;
+				downloadLink.download = fileName;
+				downloadLink.click();﻿			
+				$(obj).attr('disabled', false);
+				$(obj).val('Download Invoice');	
+			}			
+		},
+		error: function (response) {
+			alert("Error occur while processing your request. Please contact admin");
+			$(obj).attr('disabled', false);
+			$(obj).val('Download Invoice');
+		}
+	});
+	return false;
 }	

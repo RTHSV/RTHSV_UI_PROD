@@ -259,7 +259,9 @@ function showPaymentinfo(){
 	try{
 		var jsonData = JSON.parse(atob(location.search.substr(1)));
 		$.each(jsonData, function(key, val) {
-			if(key == 'Transaction ID'){
+			if(key == 'Payment Status' && val == 'failure'){
+				$("#dwnid").remove();
+			}else if(key == 'Transaction ID'){
 				$("#dwnid").attr('data-id',val)
 			}
 		  $("#paymentInfo").append('<div class="wm-article">'+
@@ -269,7 +271,7 @@ function showPaymentinfo(){
 							'<h6><a href="#">'+key+'</a></h6>'+
 						'</div>'+
 					'</li>'+
-					'<li><a href="#" class="wm-edit-icon">'+val+'</a></li>'+
+					'<li>'+val+'</li>'+
 				'</ul>'+
 			'</div>');
 		});

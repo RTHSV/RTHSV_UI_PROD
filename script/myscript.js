@@ -271,7 +271,7 @@ function showPaymentinfo(){
 							'<h6><a href="#">'+key+'</a></h6>'+
 						'</div>'+
 					'</li>'+
-					'<li>'+val+'</li>'+
+					'<li style="width:40%">'+val+'</li>'+
 				'</ul>'+
 			'</div>');
 		});

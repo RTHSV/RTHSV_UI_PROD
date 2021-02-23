@@ -222,7 +222,7 @@ function sendTalkToUsmsg(obj){
 			}
 		});
 }
-var validation = {
+var validation2 = {
     isEmailAddress:function(str) {
         var pattern =/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
         return pattern.test(str);  // returns a boolean
@@ -230,7 +230,7 @@ var validation = {
    
 };
 function subscribeNewsLetter(obj){	
-	if (!validation.isEmailAddress($("#newsLetterEmailID").val().trim())) {
+	if (!validation2.isEmailAddress($("#newsLetterEmailID").val().trim())) {
 		alert("Please Enter valid Email ID");
 		$("#newsLetterEmailID").focus();
 		return false;
@@ -296,10 +296,10 @@ function downloadPayInvoice(obj){
 				const fileName = "RTHSV_Invoice_"+$(obj).attr('data-id')+".pdf";
 				downloadLink.href = linkSource;
 				downloadLink.download = fileName;
-				downloadLink.click();﻿			
-				$(obj).attr('disabled', false);
-				$(obj).val('Download Invoice');	
+				downloadLink.click();﻿	
 			}			
+			$(obj).attr('disabled', false);
+			$(obj).val('Download Invoice');
 		},
 		error: function (response) {
 			alert("Error occur while processing your request. Please contact admin");
@@ -309,3 +309,49 @@ function downloadPayInvoice(obj){
 	});
 	return false;
 }	
+function closeStudentPopUp() {
+	$("#confirmModal").modal('hide');
+}
+function processToPaymentGateway(obj){
+	$("#amount").val(parseFloat($("#amount").val()).toFixed(2));
+	$(obj).attr('disabled', true);
+	$(obj).val('Please Wait ....');
+	$("#cancelPay").remove();
+	$(".loader").show();
+	$("#notesmg").show();
+	$.ajax({
+		type: 'POST',
+		url:  contextPathStud + "processToPaymentGateway",
+		data: JSON.stringify(getFormData($("#paymentForm"))),
+		success: function (response) {
+			$("#responseid").html(response);
+		},
+		error: function (response) {
+			alert("Error while Processing Payment request "+response);	
+			location.reload();
+		}
+	});
+}
+function confirmPaymentData() {		
+	if (!(validation.isCharacter($("#firstname").val()))) {
+		alert("Please Enter valid First Name");
+		$("#firstname").focus();
+		return false;
+	}
+	else if (!(validation.isDecimal($("#amount").val()))) {
+		alert("Please Enter valid Amount to Pay");
+		$("#amount").focus();
+		return false;
+	}
+	else if (!(validation.isNumber($("#phone").val()) && $("#phone").val().length == 10)) {
+		alert("Please Enter valid Mobile No");
+		$("#phone").focus();
+		return false;
+	}
+	 else if (!validation.isEmailAddress($("#email").val())) {
+		alert("Please Enter valid Email ID");
+		$("#email").focus();
+		return false;
+	} 
+	$("#confirmModal").modal("show");
+}

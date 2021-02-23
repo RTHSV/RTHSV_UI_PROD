@@ -69,6 +69,7 @@ var adminMenus = '<div class="collapse navbar-collapse" id="navbar-collapse-1">'
                             '</ul>'+						
 						'</li>'+
                         '<li class="" page=""><a href="javascript:void(0);" data-href="./admin-uploadNotices.html" onclick="openPage(this)">Notices</a></li>'+
+						'<li class="" page=""><a href="javascript:void(0);" data-href="./admin-paymentInfo.html" onclick="openPage(this)">Payment Info</a></li>'+
                         '<li class="" page=""><a href="javascript:void(0);" data-href="./admin-changepassword.html" onclick="openPage(this)">Change Password</a></li>'+
                         '<li class="" page=""><a href="./admin-login.html">Logout</a></li>'+
                     '</ul>'+

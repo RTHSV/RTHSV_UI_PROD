@@ -11,8 +11,16 @@ var validation = {
         var pattern = /^\d+$/;
         return pattern.test(str);  // returns a boolean
     },
+	isDecimal:function(str) {
+        var pattern = /^\d+(\.\d{1,2})?$/;
+        return pattern.test(str);  // returns a boolean
+    },
     isSame:function(str1,str2){
         return str1 === str2;
+    },
+    isCharacter:function(str){
+        var pattern = /^[a-zA-Z]+$/;
+        return pattern.test(str);
     }
 };
 
@@ -97,4 +105,15 @@ function sortTableDetails(obj){
 	}
 	sortState = sortState == 'Y' ? 'N' : 'Y'; 
 	prevIndex = position;
+}
+
+function getFormData($form){
+    var unindexed_array = $form.serializeArray();
+    var indexed_array = {};
+
+    $.map(unindexed_array, function(n, i){
+        indexed_array[n['name']] = n['value'];
+    });
+
+    return indexed_array;
 }

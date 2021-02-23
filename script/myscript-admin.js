@@ -547,3 +547,41 @@ function fetchAllStudentResultInfo(){
 		}
 	});	
 }
+var payRes;
+function fetchPaymentInfo(){
+	$.ajax({
+		type: 'POST',
+		data: '{"token":"' + sessionStorage.getItem("rthsv_token") + '"}',
+		url: contextPath + "getAllPaymentData",
+		success: function (response1) {
+			payRes=response1;
+			$("#displayTableDetails tbody").html('');
+			$.each(response1, function (key, response) {
+				var newRow = "<tr><td>" + $(response).attr("txnid") + "</td><td>" + $(response).attr("dateTime") + "</td><td>" + $(response).attr("userName") + "</td><td>" + $(response).attr("phone") + "</td><td>" + $(response).attr("status") + "</td><td>" + $(response).attr("message") + "</td><td><input type='button' data-id='"+$(response).attr("txnid")+"' onclick='return downloadPayInvoice(this)' value='Download Invoice' class='btn btn-primary'></td><td><input type='button' data-txnid='"+$(response).attr("txnid")+"' onclick='return openPaymentPopUp(this)' value='More' class='btn btn-primary'></td></tr>";
+				$("#displayTableDetails tbody").append(newRow);
+			});
+		},
+		error: function (response) {
+			alert("Error while fetching student result data");
+			validateFail(response);
+		}
+	});	
+	
+}
+function openPaymentPopUp(obj){
+	$("#modalPayPouup").modal("show");
+	$.each(payRes, function (i, res) {
+		if($(obj).attr('data-txnid') == $(res).attr('txnid')){
+			var row="";
+			$.each($(res).attr('responseMap'), function (name, val) {
+					if('hash' != name){
+						row = row + "<tr><td>"+name+"</td><td>"+val+"</td></tr>";
+					}
+			});
+			$("#popupPayTable tbody").html(row);
+		}
+	});
+}
+function closemodalPayPopup(){
+	$("#modalPayPouup").modal("hide");
+}

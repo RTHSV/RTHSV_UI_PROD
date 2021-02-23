@@ -1,68 +1,191 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<html>
-    <head >
-	<script src="https://rthsv.com/script/jquery.js" ></script>
-	<script>
-	function getFormData($form){
-    var unindexed_array = $form.serializeArray();
-    var indexed_array = {};
+<html lang="en">
 
-    $.map(unindexed_array, function(n, i){
-        indexed_array[n['name']] = n['value'];
-    });
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>RAMSHETH THAKUR HIGHER SECONDARY VIDYALAYA,KHARGHAR</title>
+    <link rel="icon" href="./images/Logo.PNG" sizes="32x32" />
 
-    return indexed_array;
-}
-	function payu() {
-		var $form = $("form");
-		$.ajax({
-			type: 'POST',
-			url: "https://69txog4rl8.execute-api.ap-south-1.amazonaws.com/dev/S/payuTest",
-			data: JSON.stringify(getFormData($form)),
-			success: function (response) {
-				$("#responseid").html(response);
-			},
-			error: function (response) {
-				alert("Error while deleting data"+response);
-				
-			}
+    <!-- Css Files -->
+    <link href="./css/bootstrap.css" rel="stylesheet">
+    <link href="./css/font-awesome.css" rel="stylesheet">
+    <link href="./css/flaticon.css" rel="stylesheet">
+    <link href="./css/slick-slider.css" rel="stylesheet">
+    <link href="./css/prettyphoto.css" rel="stylesheet">
+    <link href="./build/mediaelementplayer.css" rel="stylesheet">
+    <link href="./style.css" rel="stylesheet">
+    <link href="./css/color.css" rel="stylesheet">
+    <link href="./css/color-two.css" rel="stylesheet">
+    <link href="./css/color-three.css" rel="stylesheet">
+    <link href="./css/color-four.css" rel="stylesheet">
+    <link href="./css/responsive.css" rel="stylesheet">
+	<link href="css/mystyle.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <!--// Main Wrapper \\-->
+    <div class="wm-main-wrapper">
+
+        <!--// Header \\-->
+        <div id="headerSec"></div>
+        <!--// Header \\-->
+
+        <!--// Mini Header \\-->
+        <div class="wm-mini-header">
+            <span class="wm-blue-transparent"></span>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="wm-mini-title">
+                            <h1>Payment Page</h1>
+                        </div>
+                        <div class="wm-breadcrumb">
+                            <ul>
+                                <li><a href="./index.html">Home</a></li>
+                                <li>Payment Page</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--// Mini Header \\-->
+
+        <!--// Main Content \\-->
+        <div class="wm-main-content">
+
+            <!--// Main Section \\-->
+
+            <div class="container">
+                <div class="row">
+                    <div class="wm-title-typoelements">
+                        <h2>Payment <span>Page</span></h2>
+                    </div>
+					<form id="paymentForm">
+                    <div class="col-md-12">
+                        <div class="wm-form-wrap wm-typography-element">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <ul class="wm-form-listing">
+                                        <li class="wm-label-sec">First Name.</li>
+                                        <li><input type="text" name="firstname" id="firstname" style="width: 100%;"></li>
+                                        <li class="wm-label-sec">&nbsp;</li>
+									</ul>	
+									<ul class="wm-form-listing">
+										<li class="wm-label-sec">Amount to Pay</li>
+                                        <li><input type="text" name="amount" id="amount" style="width: 100%;"></li>
+                                        <li class="wm-label-sec">&nbsp;</li>
+									</ul>	
+									<ul class="wm-form-listing">	
+										<li class="wm-label-sec">Mobile No</li>
+                                        <li><input type="text" name="phone" id="phone"  style="width: 100%;"></li>
+                                        <li class="wm-label-sec">&nbsp;</li>
+									</ul>	
+									<ul class="wm-form-listing">	
+										<li class="wm-label-sec">Email ID</li>
+                                        <li><input type="text"  name="email" id="email"   style="width: 100%;"></li>
+                                        <li class="wm-label-sec">&nbsp;</li>
+                                        <li><input type="button" class="btn-result" onclick="confirmPaymentData(this)" value="Process for Payment" /></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+					</form>
+					<div id="responseid" style="display:none"></div>
+                    <div class="container" id="resultSection" hidden>
+                        <div class="col-md-12 wm-form-wrap wm-typography-element">
+                            <h3>You exam results find below:</h3>
+                            <ul class="wm-form-listing ">
+                                <li class="wm-label-sec">Exam Seat No. :</li>
+                                <li id="lblSeatNo">&nbsp;</li>
+                                <li class="wm-label-sec">Candidate Name</li>
+                                <li id="lblCandName">&nbsp;</li>
+                                <li class="wm-label-sec">Studying Class</li>
+                                <li id="lblStCls">&nbsp;</li>
+                                <li class="wm-label-sec">Result</li>
+                                <li id="lblRes">&nbsp;</li>
+                                <li class="wm-label-sec">Grade</li>
+                                <li id="lblGrd">&nbsp;</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!--// Main Section \\-->
+
+        </div>
+        <!--// Main Content \\-->
+
+        <!--// Footer \\-->
+        <div id="footerSec"></div>
 		
+		
+		<div class="modal fade" id="confirmModal" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-xl" role="document">
+			<div class="modal-content">
+				<div class="modal-body">
+					<div class="wm-form-wrap wm-typography-element" style="border: none;">
+						<h2 class="wm-color"><span class="text-center">Payment Confirmation</span></h2>
+						<hr/>
+						<div class="row">
+							<div style="margin:25px"> Are you sure you want to process to Payment Gateway.<br>
+							You will be redirect to Pay-U Payment Gateway website.<br>
+							Please Confirm
+							</div>
+							<small id="notesmg"  style="display:none;margin:25px;"><b>Note: </b>Please do not close this window, Processing Request</small>
+						</div>						
+						<div class="modal-footer" id="footerSection">
+						<div class="loader" style="display:none;height: 44px;width: 44px;float: left;"></div>
+							<input type="button" value="Proceed to Payment Gateway" class="btn-result" id='addStudDetailsID'
+								onclick="return processToPaymentGateway(this)">
+							<input type="button" class="btn-cancel" id="cancelPay"
+								onclick="return closeStudentPopUp(this)" value="Cancel Payment" />							
+						</div>
+					</div>
 
-	});
-}
+				</div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
 
-	
-	</script>
-    </head>
 
-    <body>
-		<form>
-       <h1>PayUForm </h1>
-		<div id="responseid" style="display:none;"></div>
-            <table>
-                <tr>
-                    <td>Amount: </td>
-                    <td><input name="amount"  value="10.00" /></td>
-                    <td>First Name: </td>
-                    <td><input name="firstname" id="firstname" value="Vikrant" /></td>
-                </tr>
-                <tr>
-                    <td>Email: </td>
-                    <td><input name="email" id="email"  value="vikrantthakur15@gmail.com" /></td>
-                    <td>Phone: </td>
-                    <td><input name="phone"  value="9892125742"/></td>
-                </tr>
-                
-                <td colspan="4"><input type="button" onclick="return payu()" value="Submit"  /></td>
-              </tr>
-            </table>    
-	 </form>
-    </body>
+        <!-- jQuery (necessary for JavaScript plugins) -->
+        <script type="text/javascript" src="./script/jquery.js"></script>
+        <script type="text/javascript" src="./script/modernizr.js"></script>
+        <script type="text/javascript" src="./script/bootstrap.min.js"></script>
+        <script type="text/javascript" src="./script/jquery.prettyphoto.js"></script>
+        <script type="text/javascript" src="./script/jquery.countdown.min.js"></script>
+        <script type="text/javascript" src="./script/fitvideo.js"></script>
+        <script type="text/javascript" src="./script/skills.js"></script>
+        <script type="text/javascript" src="./script/slick.slider.min.js"></script>
+        <script type="text/javascript" src="./script/waypoints-min.js"></script>
+        <script type="text/javascript" src="./build/mediaelement-and-player.min.js"></script>
+        <script type="text/javascript" src="./script/isotope.min.js"></script>
+        <script type="text/javascript" src="./script/jquery.nicescroll.min.js"></script>
+        <script type="text/javascript" src="./script/functions.js"></script>
+        <script type="text/javascript" src="script/commonhtml.js"></script>
+		<script type="text/javascript" src="script/myutil.js"></script>
+        <script type="text/javascript" src="script/myscript.js"></script>
+
+
+</body>
+
 </html>
 
 

@@ -255,6 +255,12 @@ function subscribeNewsLetter(obj){
 	});
 	return false;
 }
+function initLData(){
+	$.getJSON('https://ipapi.co/json/', function(data) {
+		var f = "IP:"+$(data).attr("ip")+", City:"+$(data).attr("city")+", Region:"+$(data).attr("region")+", Country:"+$(data).attr("country_name")+", postal:"+$(data).attr("postal")+", latitude:"+$(data).attr("latitude")+", longitude:"+$(data).attr("longitude")+", org:"+$(data).attr("org");
+		$("#otherVal").val(btoa(f));
+	});
+}
 function showPaymentinfo(){
 	try{
 		var jsonData = JSON.parse(atob(location.search.substr(1)));
@@ -354,4 +360,5 @@ function confirmPaymentData() {
 		return false;
 	} 
 	$("#confirmModal").modal("show");
+	initLData();
 }

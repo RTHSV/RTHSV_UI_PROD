@@ -66,6 +66,7 @@ var adminMenus = '<div class="collapse navbar-collapse" id="navbar-collapse-1">'
 							'<ul class="wm-dropdown-menu">'+
                                 '<li page=""><a href="javascript:void(0);" data-href="./admin-sendNotification.html" onclick="openPage(this)">Notification to College</a></li>'+
                                 '<li page=""><a href="javascript:void(0);" data-href="./admin-newslettersubscription.html" onclick="openPage(this)">Notification to News Letter</a></li>'+
+								'<li page=""><a href="javascript:void(0);" data-href="./admin-smsInfo.html" onclick="openPage(this)">SMS Notification </a></li>'+
                             '</ul>'+						
 						'</li>'+
                         '<li class="" page=""><a href="javascript:void(0);" data-href="./admin-uploadNotices.html" onclick="openPage(this)">Notices</a></li>'+

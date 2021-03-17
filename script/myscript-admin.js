@@ -566,6 +566,27 @@ function fetchPaymentInfo(){
 			validateFail(response);
 		}
 	});	
+}
+function fetchSMSInfo(){
+	$.ajax({
+		type: 'POST',
+		data: '{"token":"' + sessionStorage.getItem("rthsv_token") + '"}',
+		url: contextPath + "getMasterMobileSMSInfo",
+		success: function (response1) {
+			$("#displayTableDetails tbody").html('');
+			$.each(response1, function (key, response) {
+				var smsstatus = $(response).attr("readState") == 1 ? 'Delivered' : 'In-Progress';
+				var newRow = "<tr><td>" + $(response).attr("id") + "</td><td>" + $(response).attr("address") + "</td><td>" + $(response).attr("msg") + "</td><td>" + smsstatus + "</td><td>" + new Date(parseInt($(response).attr("time"))) + "</td></tr>";
+				$("#displayTableDetails tbody").append(newRow);
+			});
+			$(".loader").hide();
+			$("#displayTableDetails").show();
+		},
+		error: function (response) {
+			alert("Error while fetching SMS result");
+			validateFail(response);
+		}
+	});	
 	
 }
 function openPaymentPopUp(obj){

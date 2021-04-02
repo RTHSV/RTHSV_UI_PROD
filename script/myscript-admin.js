@@ -1,4 +1,5 @@
 var contextPath = "https://69txog4rl8.execute-api.ap-south-1.amazonaws.com/dev/A/";
+var myOpern = "";
 function uploadStudentData(obj) {
 	if ($('#jsonDataUpload').val().trim() == "") {
 		alert("Please enter valid JSON Data");
@@ -27,7 +28,7 @@ function uploadStudentData(obj) {
 			alert("Please enter Valid JSON Data");
 			$(obj).attr('disabled', false);
 			$(obj).val('Upload Students Details');
-			validateFail(response);
+			validateFail(response1);
 		}
 	});
 	return false;
@@ -71,6 +72,7 @@ function uploadStudentResult(obj) {
 function fetchStudentData(obj) {
 	$(obj).attr('disabled', true);
 	$(obj).val('Please Wait ....');
+	$("#displayTableDetails tbody").html('');
 	var jsonStr = '{"className":"' + $("#className").val() + '","token":"' + sessionStorage.getItem("rthsv_token") + '"}';
 	$.ajax({
 		type: 'POST',
@@ -88,15 +90,13 @@ function fetchStudentData(obj) {
 	});
 }
 
-function createStudentDetailsTable(response1) {
-	$("#displayTableDetails tbody").html('');
+function createStudentDetailsTable(response1) {	
 	if (response1.length > 0) {
 		$.each(response1, function (key, response) {
-			var newRow = "<tr><td data-type='number'>" + (++key) + "</td><td data-type='number'>" + $(response).attr("rollNo") + "</td><td>" + $(response).attr("name") + "</td><td data-type='number'>" + $(response).attr("mobileNo") + "</td>" +
-				"<td>" + $(response).attr("emailId") + "</td><td>" + $(response).attr("address") + "</td>" +
-				"<td><a class='tb-btn' alt='Edit' title='Edit' href='javascript:void(0);' onClick='return editStudentData(this)'>Edit</a>&nbsp;<a class='tb-btn' alt='Delete' title='Delete' href='javascript:void(0);'onClick='return deleteStudentData(this)'>Delete</a></td></tr>";
-
-			$("#displayTableDetails tbody").append(newRow);
+			var newRow = "<tr><td data-type='number'>" + (++key) + "</td><td>" + $(response).attr("rollNo") + "</td><td>" + $(response).attr("name") + "</td><td data-type='number'>" + checkNull($(response).attr("mobileNo")) + "</td>" +
+				"<td>" + checkNull($(response).attr("emailId")) + "</td><td>" + checkNull($(response).attr("address")) + "</td><td>" + checkNull($(response).attr("fmobileNo")) +" / "+ checkNull($(response).attr("mmobileNo"))+ "</td>" +
+				"<td><a class='tb-btn' alt='Edit' data-fmobile='"+checkNull($(response).attr("fmobileNo"))+"' data-mmobile='"+checkNull($(response).attr("mmobileNo"))+"' data-femail='" + checkNull($(response).attr("femailId")) +"' data-memail='" + checkNull($(response).attr("memailId")) +"' title='Edit' href='javascript:void(0);' onClick='return editStudentData(this)'>Edit</a>&nbsp;<a class='tb-btn' alt='Delete' title='Delete' href='javascript:void(0);'onClick='return deleteStudentData(this)'>Delete</a></td></tr>";
+				$("#displayTableDetails tbody").append(newRow);
 		});
 	} else {
 		var row = "<tr><td colspan='7'>No details available.</td></tr>";
@@ -104,32 +104,30 @@ function createStudentDetailsTable(response1) {
 	}
 }
 
-function editStudentData(obj) {
-	var newRow = "<td data-type='number'>" + getRowHtml(obj, 0) + "</td>" +
-		"<td data-type='number'>" + getRowHtml(obj, 1) + "</td>" +
-		"<td><input type='text' size='4' maxlength='20' value='" + getRowHtml(obj, 2) + "'></td>" +
-		"<td><input type='text' size='5' maxlength='10' value='" + getRowHtml(obj, 3) + "'></td>" +
-		"<td><input type='text' size='8' maxlength='50' value='" + getRowHtml(obj, 4) + "'></td>" +
-		"<td><input type='text' size='8' maxlength='200' value='" + getRowHtml(obj, 5) + "'></td>" +
-		"<td><a class='tb-btn' href='javascript:void(0);' alt='Update' title='Update' onClick='return updateStudentData(this)'>Update</a>&nbsp;<a class='tb-btn' href='javascript:void(0);' alt='Cancel' title='Cancel' onClick='return fn_cancelUpdate()'>Cancel</a></td>";
-	$(obj).parent().parent().html(newRow);
-
-}
-function updateStudentData(obj) {
-	var map = {};
-	map["Roll No"] = getRowHtml(obj, 1).trim();
-	map["Name"] = getRowValue(obj, 2).trim();
-	map["Mobile No"] = getRowValue(obj, 3).trim();
-	map["Email ID"] = getRowValue(obj, 4).trim();
-	map["Address"] = getRowValue(obj, 5).trim();
-	map["className"] = $("#className").val().trim();
-	map["token"] = sessionStorage.getItem("rthsv_token");
-	map["operation"] = "U";
-	if (!validateStudentDetails(map)) {
-		return false;
+function checkNull(val){
+	var result = val;
+	if(val == null){
+		result = ""; 
 	}
-	updStudentDetails(obj, map);
-	return false;
+	return result;
+}
+
+function editStudentData(obj) {
+	$("#confirmModal").modal('show');
+	$("#rollNo").val(getRowHtml(obj, 1)).attr('readonly',true).attr('style',"background-color: #f0eef0;");
+	$("#name").val(getRowHtml(obj, 2));
+	$("#mobileno").val(getRowHtml(obj, 3));
+	$("#emailid").val(getRowHtml(obj, 4));
+	$("#address").val(getRowHtml(obj, 5));
+	
+	$("#data-fmobile").val($(obj).attr("data-fmobile"));
+	$("#data-mmobile").val($(obj).attr("data-mmobile"));	
+	$("#femailId").val($(obj).attr("data-femail"));
+	$("#memailId").val($(obj).attr("data-memail"));
+	myOpern="U";
+	
+	$("#addStudDetailsID").attr('disabled', false);
+	$("#addStudDetailsID").val('Save');
 }
 function addStudentDetails(obj) {
 	var map = {};
@@ -139,12 +137,19 @@ function addStudentDetails(obj) {
 	map["Email ID"] = $("#emailid").val().trim();
 	map["Address"] = $("#address").val().trim();
 	map["className"] = $("#className").val().trim();
+	map["FmobileNo"] = $("#fmobileNo").val().trim();
+	map["MmobileNo"] = $("#mmobileNo").val().trim();
+	
+	map["FEmail ID"] = $("#femailId").val().trim();
+	map["MEmail ID"] = $("#memailId").val().trim();
+	
 	map["token"] = sessionStorage.getItem("rthsv_token");
-	map["operation"] = "A";
+	map["operation"] = myOpern;
 	if (!validateStudentDetails(map)) {
 		return false;
 	}
 	updStudentDetails(obj, map);
+	
 	return false;
 }
 
@@ -153,7 +158,7 @@ function fn_cancelUpdate() {
 }
 
 function validateStudentDetails(map) {
-	if (!validation.isNumber(map['Roll No'])) {
+	if (map['Roll No'] == "") {
 		alert("Please Enter valid Roll No");
 		return false;
 	} else if (map['Name'] == "") {
@@ -232,14 +237,18 @@ function getRowHtml(obj, index) {
 
 function addStudentData(obj) {
 	$("#confirmModal").modal('show');
-	$("#rollNo").val('')
+	$("#rollNo").val('').attr('readonly',false).attr('style',"");
 	$("#name").val('');
 	$("#mobileno").val('');
 	$("#emailid").val('');
 	$("#address").val('');
+	$("#fmobileNo").val('');
+	$("#mmobileNo").val('');
+	$("#femailId").val('');
+	$("#memailId").val('');
 	$("#addStudDetailsID").attr('disabled', false);
 	$("#addStudDetailsID").val('Save');
-	
+	myOpern="A";
 }
 function closeStudentPopUp() {
 	$("#confirmModal").modal('hide');
@@ -263,6 +272,7 @@ function sendNotificationToStud(obj) {
 			data: JSON.stringify(map),
 			success: function (response) {
 				alert(response);
+				location.reload();
 				$(obj).attr('disabled', false);
 				$(obj).val('Send Notification to Student');
 			},

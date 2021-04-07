@@ -362,3 +362,133 @@ function confirmPaymentData() {
 	$("#confirmModal").modal("show");
 	initLData();
 }
+
+function initTestimonialData(){
+	var mainMap = {};
+	
+	var userMap = {};
+	userMap["name"]="Snehal K Salunkhe";
+	userMap["batch"]="&nbsp;&nbsp;- Batch 2018-2019";
+	userMap["content"]="Hello! I am Snehal K. Salunkhe, I have completed my B. Tech Biotechnology in the past year. Currently, I am planning for a Master's in Science in Germany. Seven years ago, I took one of the good decisions of my life, that is to take admission in RTHSV. Initially, I was struggling to adjust myself to the environment and developing a perpetual relationship with my professors. My journey over these two years has been amazing. During my school times, I struggled a lot with my active participation in various events, having a good interaction with my school folks as well as getting good grades. The two years of my academic life in this institution have given rise to a lot of positive changes as a person. The professors have been so understanding and cooperative with me.For the present and incoming students, I will recommend this institution in terms of various factors such as the brilliant staff, amazing infrastructure, numerous facilities.";
+	mainMap["1"]=userMap;
+	
+	var userMap = {};
+	userMap["name"]="Rafat Karbhari";
+	userMap["batch"]="&nbsp;&nbsp;- Batch 2018-2019";
+	userMap["content"]="The Teacher are well qualified and fair in there work, The college impose strict rules on both faculty and student to maintain uniformity and discpline, Also college maintain balance between the acadeny and extracurricular activities, which makes student easy.";
+	mainMap["2"]=userMap;
+	
+	var userMap = {};
+	userMap["name"]="Tisha";
+	userMap["batch"]="&nbsp;&nbsp;- Batch 2017-2018";
+	userMap["content"]="Best College, they motivates students not only to excel in studies but also in gaming and other cultural activities and is favorable for any kind of students to get easy accustomed, disciplined through friendly environment.Teachers are very cooperative in nature.";
+	mainMap["3"]=userMap;
+	
+	var userMap = {};
+	userMap["name"]="Shamila ";
+	userMap["batch"]="&nbsp;&nbsp;- Batch 2017-2018";
+	userMap["content"]="The College is placed where you will get best education.This help me to develop my skills and education content";
+	mainMap["4"]=userMap;
+	
+	$.each(mainMap, function(key, value) {   
+		$("#testimonialContent").append('<div class="wm-thumb-testimonial-layer">'+
+			'<figure><a href="javascript:void(0);"><img src="images/testimonial/'+key+'.jpg" alt=""></a>'+
+			'</figure>'+
+			'<div class="thumb-testimonial-text">'+
+				'<h4><a href="javascript:void(0);">'+value["name"]+'</a></h4>'+
+				'<span class="wm-color-two">'+value["batch"]+'</span>'+
+				'<p>'+value["content"]+'</p>'+
+			'</div>'+
+		'</div>');
+	});
+}
+
+function initFAQ(){
+	var map={};
+	map["What is the timing of the college?"]="The timing of the college is 11pm to 5pm.";
+	map["Is the college bus facility available?"]="No";
+	map["Is offline admission available in the college?"]="No";
+	map["Whether the college is CBSE or State Board?"]="State Board.";
+	map["Do students in college have uniforms?"]="Yes";
+	map["Does college have Information Technology Subject in college?"]="Yes";
+	map["Can I take I.T. subject? Is there any surety of getting I.T. subject?"]="Yes, you can take I.T. subject but there is no surety as students who come in merit list will only get I.T. subject.";
+	map["What are the documents to be attached with admission form for state board students?"]="1.Online generated form no1 and form no2,<br>2. Admission form,<br>3. 3 photos,<br>4. X mark sheet (original) with 3 Xerox copies,<br>5. X leaving certificate (original) with 3 Xerox, <br>6. 3 Xerox of Aadhar Card, and <br>7. 3 Caste certificate Xerox ";
+	map["What are the documents to be attached with admission form for CBSE and ICSE board students?"]="1.Online generated form no1 and form no2,<br>2. Admission form, <br>3.Passport size photos 3, <br>4. X mark sheet (original) with 3 Xerox copies, <br>5. X leaving certificate (original) with 3 Xerox,  <br>6. 3 Xerox of Aadhar Card, <br>7.3 Caste certificate Xerox and<br>8. Migration certificate (original) and 2 Xerox.<br>";
+	map["Can we change subjects later?"]="No. Subjects once selected cannot be changed.";
+	
+	var i=0;
+	$.each(map, function(key, value) {  
+		i++;
+		$("#accordion").append('<div class="panel panel-default">'+
+			'<div class="panel-heading" role="tab" id="heading'+i+'">'+
+				'<h4 class="panel-title">'+
+					'<a role="button" data-toggle="collapse"'+
+						'data-parent="#accordion" href="#collapse'+i+'"'+
+						'aria-expanded="true" aria-controls=" collapse'+i+'">'+key+'</a>'+
+				'</h4>'+
+			'</div>'+
+			'<div id="collapse'+i+'" class="panel-collapse collapse in"'+
+				'role="tabpanel" aria-labelledby="heading'+i+'">'+
+				'<div class="panel-body">'+value+'</div>'+
+			'</div>'+
+		'</div>');
+	});
+}
+function initLabImg(){
+	for(var i =1;i<=26;i++){
+		 $("#labimg").append('<li><a title="" data-rel="prettyPhoto[gallery1]" href="'+imgpt+'/images/lab/large/'+i+'.JPG"><img src="'+imgpt+'/images/lab/small/'+i+'.JPG" alt="" ></a></li>');
+	}
+}
+
+function generateEventMap(){
+	var map={}
+	map["Gurupurnima"]="Gurupurnima Event,2018-19#8,2019-20#10";
+	map["TeachersDay"]="Teachers Day,2016-17#6,2017-18#5,2018-19#33,2019-20#62";
+	map["TraditionalDay"]="Traditional Day,2016-17#4,2018-19#36";
+	map["YogaDay"]="Yoga Day,2017-18#5,2018-19#28";
+	map["AnnualDay"]="Annual Day,2016-17#2,2017-18#7";
+	map["OrientationDay"]="Orientation Day,2018-19#1,2019-20#27";
+	map["PriceDistrubition"]="Price Distrubition,2016-17#8,2017-18#8";
+	map["Rakhi"]="Rakhi Competation,2018-19#10";
+	map["Other"]="Other Event,2016-17#2,2017-18#9,2018-19#8";
+	return map;
+}
+
+function initEvents(){
+	var map = generateEventMap();	
+	$.each(map, function(key, value) { 
+	value=value.split(",")
+		$("#eventsid").append('<li class="col-md-4">'+
+			'<figure>'+
+				'<a href="events.html?'+key+'">'+
+				'<img style="height:180px" src="./images/events/'+key+'.jpg"  alt="'+key+'" title="'+key+'"></a>'+
+			'</figure>'+
+			'<div class="wm-newsgrid-text">'+
+				'<h5><a href="javascript:void(0);" class="wm-color" alt="'+key+'" title="'+key+'">'+value[0]+'</a></h5>'+
+				'<a class="wm-banner-btn" href="events.html?'+key+'" alt="View more" title="View more">View more</a>'+
+			'</div>'+
+		'</li>');
+	});	
+}
+function initEventsDetails(){
+	var map = generateEventMap();
+	var s = window.location.search;
+	var key = s.substr(1,s.length);
+	var mapData = map[key];
+	var value=mapData.split(",");
+	$(".eventName").html(value[0]);
+	
+	for(var i=1;i<value.length;i++){
+	var val2 = value[i].split("#");	
+	var data = '<div class="wm-title-typoelements wm-detail-editore">'+
+		'<h2>'+value[0]+'&nbsp;<span>'+val2[0]+'</span></h2>'+
+	'</div>'+
+	'<div class="widget widget_gallery col-md-12">'+
+		'<ul class="gallery" id="labimg">';			
+			for(var j=1;j<=parseInt(val2[1]);j++){
+				data = data +'<li><a title="" data-rel="prettyPhoto[gallery1]" href="'+imgpt+'/images/events/'+val2[0]+'/'+key+'/'+j+'.jpg"><img src="'+imgpt+'/images/events/'+val2[0]+'/'+key+'/'+j+'.jpg"></a></li>';
+			}
+		data + '</ul></div>';
+		$("#eventsData").append(data);
+	}		
+}

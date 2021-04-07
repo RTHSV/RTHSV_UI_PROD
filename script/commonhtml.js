@@ -39,7 +39,7 @@ var webSiteMenus = '<div class="collapse navbar-collapse" id="navbar-collapse-1"
                                     '<li page="Exam Result"><a onClick="openPage(this)" data-href="'+imgpt+'/ranking.html">Student Ranking</a></li>'+
                                 '</ul>'+
                             '</li>'+
-                            '<li class="" page="Contact Us"><a onClick="openPage(this)" data-href="'+imgpt+'/contact-us.html">Contact Us</a></li>'+
+							'<li class="" page="laboratory"><a onClick="openPage(this)" data-href="'+imgpt+'/lab.html">Laboratory</a></li>'+
                             '<li class="" page="About Us"><a data-href="aboutus">About Us</a>'+
                                 '<ul class="wm-dropdown-menu">'+
                                     '<li page="Our Inspiration"><a onClick="openPage(this)" data-href="'+imgpt+'/our-inspiration.html">Our Inspiration</a></li>'+
@@ -49,7 +49,7 @@ var webSiteMenus = '<div class="collapse navbar-collapse" id="navbar-collapse-1"
                             '</li>'+
                             '<li class="" page="Rules Page"><a onClick="openPage(this)" data-href="'+imgpt+'/rules-page.html">Rules &amp; Regulations </a></li>'+
                             '<li class="" page="FAQs"><a onClick="openPage(this)" data-href="'+imgpt+'/faq-page.html">FAQ&acute;s</a></li>'+
-                            '<li class="" page="FAQs"><a  href="javascript:void(0);">Payment</a></li>'+
+                            '<li class="" page="Contact Us"><a onClick="openPage(this)" data-href="'+imgpt+'/contact-us.html">Contact Us</a></li>'+
                         '</ul>'+
                     '</div>';
 
@@ -85,7 +85,12 @@ var header = '<header id="wm-header" class="wm-header-one" style="z-index: 1 !im
                 '<div class="wm-topstrip">'+
                     '<div class="container">'+
                         '<div class="row">'+
-                            '<div class="col-md-12">'+
+							'<div class="col-md-1">'+
+                                '<div class="top-header">'+
+                                   '<img src="'+imgpt+'/images/Logo.PNG" style="max-width:112px">'+
+                                '</div>'+
+							'</div>'+	
+                            '<div class="col-md-11">'+
                                 '<div class="top-header">'+
                                     '<div class="header-text1">Janardan Bhagat Shikshan Prasarak Sanstha&acute;s</div>'+
                                     '<div class="header-text2">Ramsheth Thakur Higher Secondary Vidyalay,Kharghar (Commerce &amp; Science)</div>'+
@@ -102,8 +107,9 @@ var header = '<header id="wm-header" class="wm-header-one" style="z-index: 1 !im
                 '<div class="wm-main-header">'+
                     '<div class="container">'+
                         '<div class="row">'+
-                            '<div class="col-md-2"><a href="'+imgpt+'/index.html" class="wm-logo"><img src="'+imgpt+'/images/Logo.PNG" alt="'+title+'" title="'+title+'" width="100px"></a></div>'+
-                            '<div class="col-md-10" style="margin-top:30px">'+
+                            //'<div class="col-md-2"><a href="'+imgpt+'/index.html" class="wm-logo"><img src="'+imgpt+'/images/Logo.PNG" alt="'+title+'" title="'+title+'" width="100px"></a></div>'+
+                            '<div class="col-md-1"></div>'+
+							'<div class="col-md-11" style="margin-top:30px;margin-bottom:30px">'+
                                 '<nav class="navbar navbar-default">'+
                                     '<div class="navbar-header">'+
                                         '<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="true">'+
@@ -190,27 +196,27 @@ var footer = '<footer id="wm-footer" class="wm-footer-one">'+
                                     '</li>'+
                                 '</ul>'+
                             '</aside>'+
-                            '<aside class="widget widget_gallery col-md-3">'+
+                            '<aside class="widget widget_gallery col-md-5">'+
                                 '<div class="wm-footer-widget-title">'+
                                     '<h5>Our Professors</h5>'+
                                 '</div>'+
                                 '<ul class="gallery">'+
-                                    '<li><a title="" data-rel="prettyPhoto[gallery1]" href="'+imgpt+'/extra-images/widget-galleryfull-1.jpg"><img src="'+imgpt+'/extra-images/widget-gallery-1.jpg" alt=""></a></li>'+
-                                    '<li><a title="" data-rel="prettyPhoto[gallery1]" href="'+imgpt+'/extra-images/widget-galleryfull-2.jpg"><img src="'+imgpt+'/extra-images/widget-gallery-2.jpg" alt=""></a></li>'+
-                                    '<li><a title="" data-rel="prettyPhoto[gallery1]" href="'+imgpt+'/extra-images/widget-galleryfull-3.jpg"><img src="'+imgpt+'/extra-images/widget-gallery-3.jpg" alt=""></a></li>'+
-                                    '<li><a title="" data-rel="prettyPhoto[gallery1]" href="'+imgpt+'/extra-images/widget-galleryfull-4.jpg"><img src="'+imgpt+'/extra-images/widget-gallery-4.jpg" alt=""></a></li>'+
-                                    '<li><a title="" data-rel="prettyPhoto[gallery1]" href="'+imgpt+'/extra-images/widget-galleryfull-5.jpg"><img src="'+imgpt+'/extra-images/widget-gallery-5.jpg" alt=""></a></li>'+
-                                    '<li><a title="" data-rel="prettyPhoto[gallery1]" href="'+imgpt+'/extra-images/widget-galleryfull-6.jpg"><img src="'+imgpt+'/extra-images/widget-gallery-6.jpg" alt=""></a></li>'+
-                                    '<li><a title="" data-rel="prettyPhoto[gallery1]" href="'+imgpt+'/extra-images/widget-galleryfull-7.jpg"><img src="'+imgpt+'/extra-images/widget-gallery-7.jpg" alt=""></a></li>'+
-                                    '<li><a title="" data-rel="prettyPhoto[gallery1]" href="'+imgpt+'/extra-images/widget-galleryfull-8.jpg"><img src="'+imgpt+'/extra-images/widget-gallery-8.jpg" alt=""></a></li>'+
-                                    '<li><a title="" data-rel="prettyPhoto[gallery1]" href="'+imgpt+'/extra-images/widget-galleryfull-9.jpg"><img src="'+imgpt+'/extra-images/widget-gallery-9.jpg" alt=""></a></li>'+
-                                '</ul>'+
+                                    getFooterImg()
+								'</ul>'+
                             '</aside>'+
                         '</div>'+
                     '</div>'+
                 '</div>'+
             '</footer>';
 
+
+function getFooterImg(){
+	var content="";
+	for(var i =1;i<=15;i++){
+		 content = content +'<li><a title="" data-rel="prettyPhoto[gallery1]" href="'+imgpt+'/images/staff/large/'+i+'.jpg"><img src="'+imgpt+'/images/staff/small/'+i+'.jpg" alt=""></a></li>';
+	}
+	return content;
+}
 if(!isAdmin) {
     $("#footerSec").html(footer);
 }

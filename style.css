@@ -87,7 +87,7 @@
     padding: 0;
 }
 body {
-    background-color: #ffffff;
+    background-color: #F5F5F5;
     color: #424242;
     font-family: 'Ubuntu', sans-serif;
     font-size: 15px;
@@ -1199,7 +1199,7 @@ address { font-style: italic; }
 }
 /* mini header */
 .wm-mini-header {
-    background-image: url("extra-images/mini-header.jpg");
+    background-image: url("images/mini-header.jpg");
     background-repeat: no-repeat;
     text-align: center;
     padding: 75px 0px 69px 0px;
@@ -3603,7 +3603,7 @@ ul li:last-child .wm-latest-news-wrap {
 .thumb-testimonial-text {
     float: left;
     width: 100%;
-    padding: 47px 36px 74px 36px;
+    padding: 15px 36px 74px 36px;
     background-color: #f6f6f6;
     position: relative;
 }
@@ -9690,7 +9690,7 @@ aside .widget {
     float: left;
     list-style: none;
     padding: 0 0 10px 10px;
-    width: 33.333%;
+    width: 25%;
 }
 .widget_gallery a {
     width: 100%;
@@ -10285,7 +10285,7 @@ figure:hover .wm-hover-link i           { top: 50%; }
 
 .top-header .header-text2 {
     color: #ffffff;
-    font-size: 30px;
+    font-size: 26px;
     font-weight: bold;
 }
 

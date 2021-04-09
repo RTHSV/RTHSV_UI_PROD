@@ -1,6 +1,8 @@
 var contextPathStud = "https://69txog4rl8.execute-api.ap-south-1.amazonaws.com/dev/S/";
 var slideIndex = 0;
 var timeoutvar;
+var inner = document.getElementById("inner");
+var imgpt = inner == null ? "." : "..";
 
 function showSlides() {
 	var i;
@@ -461,7 +463,7 @@ function initEvents(){
 		$("#eventsid").append('<li class="col-md-4">'+
 			'<figure>'+
 				'<a href="events.html?'+key+'">'+
-				'<img style="height:180px" src="./images/events/'+key+'.jpg"  alt="'+key+'" title="'+key+'"></a>'+
+				'<img style="height:180px" src="'+imgpt+'/images/events/'+key+'.jpg"  alt="'+key+'" title="'+key+'"></a>'+
 			'</figure>'+
 			'<div class="wm-newsgrid-text">'+
 				'<h5><a href="javascript:void(0);" class="wm-color" alt="'+key+'" title="'+key+'">'+value[0]+'</a></h5>'+

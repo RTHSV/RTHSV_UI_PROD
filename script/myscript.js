@@ -444,7 +444,7 @@ function initLabImg(){
 function initLabImgMobile(){
 	for(var i =1;i<=26;i++){
 		 $("#labimg").append('<div class="wm-thumb-testimonial-layer">'+
-			'<figure><a href="javascript:void(0);"><img src="'+imgpt+'/images/lab/large/'+i+'.jpg"" style="margin-bottom: 27px;"></a></figure>'+
+			'<figure><a href="javascript:void(0);"><img src="'+imgpt+'/images/lab/large/'+i+'.JPG"" style="margin-bottom: 27px;"></a></figure>'+
 			'</div>');
 	}
 }
@@ -500,4 +500,33 @@ function initEventsDetails(){
 		data + '</ul></div>';
 		$("#eventsData").append(data);
 	}		
+}
+function initEventsDetailsMobile(){
+	var map = generateEventMap();
+	var s = window.location.search;
+	var key = s.substr(1,s.length);
+	var mapData = map[key];
+	var value=mapData.split(",");
+	$(".eventName").html(value[0]);
+	
+	for(var i=1;i<value.length;i++){
+	var val2 = value[i].split("#");	
+	var data = '<div class="wm-title-typoelements wm-detail-editore">'+
+		'<h2>'+value[0]+'&nbsp;<span>'+val2[0]+'</span></h2>'+
+	'</div>'+
+	'<div class="widget widget_gallery col-md-12">'+
+		'<ul class="wm-thumb-testimonial" id="labimg">';			
+			for(var j=1;j<=parseInt(val2[1]);j++){
+				
+				data = data + '<div class="wm-thumb-testimonial-layer">'+
+			'<figure><a href="javascript:void(0);"><img src="'+imgpt+'/images/events/'+val2[0]+'/'+key+'/'+j+'.jpg" style="margin-bottom: 27px;"></a></figure>'+
+			'</div>';
+				
+			}
+		data + '</ul></div>';
+		$("#eventsData").append(data);
+	}
+	
+	
+	
 }

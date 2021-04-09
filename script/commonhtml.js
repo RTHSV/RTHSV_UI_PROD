@@ -217,6 +217,13 @@ function getFooterImg(){
 	}
 	return content;
 }
+function initProofesorImg(){
+	for(var i =1;i<=15;i++){
+		$("#proofesorImg").append('<div class="wm-thumb-testimonial-layer">'+
+			'<figure><a href="javascript:void(0);"><img src="'+imgpt+'/images/staff/large/'+i+'.jpg"" style="margin-bottom: 27px;"></a></figure>'+
+			'</div>');
+	}
+}
 if(!isAdmin) {
     $("#footerSec").html(footer);
 }

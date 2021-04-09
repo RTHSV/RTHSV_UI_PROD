@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- student-dashboard-settings21:55  -->
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	<title>Student Dashboard-Settings</title>
+
+	<!-- Css Files -->
+	<link href="../css/bootstrap.css" rel="stylesheet">
+	<link href="../style.css" rel="stylesheet">
+	<link href="../css/color.css" rel="stylesheet">
+	<link href="../css/mystyle.css" rel="stylesheet">
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+	<!--// Main Wrapper \\-->
+	<div class="wm-main-wrapper">
+
+		<!--// Mini Header \\-->
+
+		<!--// Main Content \\-->
+		<div class="wm-main-content">
+
+			<!-- Notice Board [Start]-->
+			<div class="wm-main-section">
+				<div class="container">
+					<div class="wm-title-typoelements">
+						<h2>Notice <span>Board</span> </h2>
+					</div>
+					<div class="row">
+						<aside class="col-md-3">
+							<div class="wm-tabs-listing wm-typography-element">
+								<span id="noticePleasewait" style="color:red">Please wait...</span>
+								<ul class="nav nav-tabs" role="tablist" id="noticeHeader">
+								    <li role="presentation" class="active"><a href="#general" id="common" aria-controls="form" role="tab" data-toggle="tab">General</a></li>
+								   	<li role="presentation"><a href="#fys" id="FYJC_Science" aria-controls="form" role="tab" data-toggle="tab">FYJC Science</a></li>
+								   	<li role="presentation"><a href="#sys" id="SYJC_Science" aria-controls="letter" role="tab" data-toggle="tab">SYJC Science</a></li>
+									<li role="presentation"><a href="#fyc" id="FYJC_Commerce"  aria-controls="letter" role="tab" data-toggle="tab">FYJC Commerce</a></li>
+									<li role="presentation"><a href="#syc" id="SYJC_Commerce"  aria-controls="letter" role="tab" data-toggle="tab">SYJC Commerce</a></li>
+									<li role="presentation"><a href="#nts" id="Non-Teaching_Staff"  aria-controls="letter" role="tab" data-toggle="tab">Non-Teaching Staff</a></li>
+									<li role="presentation"><a href="#ts"  id="Teaching_Staff" aria-controls="letter" role="tab" data-toggle="tab">Teaching Staff</a></li>
+								</ul>
+							</div>							
+						</aside>
+						<div class="col-md-9">							
+							<div class="wm-promo-box wm-typography-element">								
+								<div id="noticeDisplay" style="height: 800px;">
+									<h1 class="text-center">No Notice is available.</h1>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Notice Board [End ]-->
+
+		</div>
+	</div>
+	<!--// Main Wrapper \\-->
+
+
+	<!-- ModalSearch Box -->
+
+	<!-- jQuery (necessary for JavaScript plugins) -->
+	<script type="text/javascript" src="../script/jquery.js"></script>
+	<script type="text/javascript" src="../script/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../script/myscript.js" id="inner"></script>
+
+	<script>
+		getAllActiveNotices();
+	</script>
+
+</body>
+
+<!-- student-dashboard-settings21:55  -->
+
+</html>

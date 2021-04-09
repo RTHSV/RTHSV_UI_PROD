@@ -394,7 +394,7 @@ function initTestimonialData(){
 	
 	$.each(mainMap, function(key, value) {   
 		$("#testimonialContent").append('<div class="wm-thumb-testimonial-layer">'+
-			'<figure><a href="javascript:void(0);"><img src="images/testimonial/'+key+'.jpg" alt=""></a>'+
+			'<figure><a href="javascript:void(0);"><img src="'+imgpt+'/images/testimonial/'+key+'.jpg" alt=""></a>'+
 			'</figure>'+
 			'<div class="thumb-testimonial-text">'+
 				'<h4><a href="javascript:void(0);">'+value["name"]+'</a></h4>'+
@@ -439,6 +439,13 @@ function initFAQ(){
 function initLabImg(){
 	for(var i =1;i<=26;i++){
 		 $("#labimg").append('<li><a title="" data-rel="prettyPhoto[gallery1]" href="'+imgpt+'/images/lab/large/'+i+'.JPG"><img src="'+imgpt+'/images/lab/small/'+i+'.JPG" alt="" ></a></li>');
+	}
+}
+function initLabImgMobile(){
+	for(var i =1;i<=26;i++){
+		 $("#labimg").append('<div class="wm-thumb-testimonial-layer">'+
+			'<figure><a href="javascript:void(0);"><img src="'+imgpt+'/images/lab/large/'+i+'.jpg"" style="margin-bottom: 27px;"></a></figure>'+
+			'</div>');
 	}
 }
 

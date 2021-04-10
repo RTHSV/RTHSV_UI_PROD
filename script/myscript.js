@@ -536,8 +536,8 @@ function initNotificationMessage(){
 			$(response1).each(function(i,obj){				
 				$("#notifiMsg").append('<li class="col-md-12">'+
 					'<div class="wm-event-medium-wrap">'+
-						'<div class="wm-eventmedium-text">'+
-							'<h5><a href="#" style="color:green">'+$(obj).attr('dateTime')+'</a></h5>'+
+						'<div class="wm-eventmedium-text" style="padding: 0px 0px 0px 0px;">'+
+							'<h5><a href="#" style="color:green">'+$(obj).attr('title')+' : '+$(obj).attr('dateTime')+'</a></h5>'+
 							'<p>'+$(obj).attr('message')+'.</p>'+
 						'</div>'+
 					'</div>'+

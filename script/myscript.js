@@ -526,7 +526,30 @@ function initEventsDetailsMobile(){
 		data + '</ul></div>';
 		$("#eventsData").append(data);
 	}
-	
+}
+function initNotificationMessage(){
+	$("#wait").show();
+	$.ajax({
+		type: 'POST',
+		url: contextPathStud + "getAllNotification",
+		success: function (response1) {
+			$(response1).each(function(i,obj){				
+				$("#notifiMsg").append('<li class="col-md-12">'+
+					'<div class="wm-event-medium-wrap">'+
+						'<div class="wm-eventmedium-text">'+
+							'<h5><a href="#" style="color:green">'+$(obj).attr('dateTime')+'</a></h5>'+
+							'<p>'+$(obj).attr('message')+'.</p>'+
+						'</div>'+
+					'</div>'+
+				'</li>');						
+			});	
+			$("#wait").hide();			
+		},
+		error: function (response) {
+			alert("Error while getting Notices Data.Please try after some time");
+		}
+	});
+	return false;
 	
 	
 }

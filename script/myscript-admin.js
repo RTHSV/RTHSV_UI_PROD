@@ -1,4 +1,4 @@
-var contextPath = "https://69txog4rl8.execute-api.ap-south-1.amazonaws.com/dev/A/";
+var contextPath = "https://lk4f5mh0d0.execute-api.ap-south-1.amazonaws.com/dev/A/";
 var myOpern = "";
 function uploadStudentData(obj) {
 	if ($('#jsonDataUpload').val().trim() == "") {

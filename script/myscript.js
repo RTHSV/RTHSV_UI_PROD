@@ -1,4 +1,4 @@
-var contextPathStud = "https://69txog4rl8.execute-api.ap-south-1.amazonaws.com/dev/S/";
+var contextPathStud = "https://lk4f5mh0d0.execute-api.ap-south-1.amazonaws.com/dev/S/";
 var slideIndex = 0;
 var timeoutvar;
 var inner = document.getElementById("inner");

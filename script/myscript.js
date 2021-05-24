@@ -375,58 +375,82 @@ function initTestimonialData(){
 	mainMap["1"]=userMap;
 	
 	var userMap = {};
-	userMap["name"]="Rafat Karbhari";
-	userMap["batch"]="&nbsp;&nbsp;- Batch 2018-2019";
-	userMap["content"]="The Teacher are well qualified and fair in there work, The college impose strict rules on both faculty and student to maintain uniformity and discpline, Also college maintain balance between the acadeny and extracurricular activities, which makes student easy.The Infrastructure of this campus is mind-blowing.The practical labs are well equipped.The library offers you many options.And the memories in the canteen will always remind you this place.One more point to add is natural beauty surrounding the campus is mesmerizing.";
+	userMap["name"]="Prerena Bhosale";
+	userMap["batch"]="&nbsp;&nbsp;- Batch 2017-2018";
+	userMap["content"]="Being a student at J.B.S.P Sanstha’s ‘Ramsheth Thakur Higher Secondary Vidyalaya, Kharghar’ has been a surreal experience. Almost two years that I spent in this campus as a Science student, I learnt so many things not only through academics but also through extra-curricular activities like dance, sports etc. We get an opportunity to apply academic skills in a real-world context. My two year journey in this college made me a more confident, self-dependent person ready to take on any challenges with a smile. The credit goes to all the teachers and the Principal of this institution. Teachers played the role of being a second mother and this college was no less than a second home for us.The infrastructure  and the ambience available to the students is mind blowing. Well-equipped labs, exhaustive library, hygienic canteen and the natural beauty surrounding the campus motivates one to seek more knowledge.";
 	mainMap["2"]=userMap;
 	
 	var userMap = {};
-	userMap["name"]="Tisha";
+	userMap["name"]="Tisha Shriyan";
 	userMap["batch"]="&nbsp;&nbsp;- Batch 2017-2018";
 	userMap["content"]="Best College, they motivates students not only to excel in studies but also in gaming and other cultural activities and is favorable for any kind of students to get easy accustomed, disciplined through friendly environment.Teachers are very cooperative in nature.This place has done that to me and I am very sure that anyone who comes to this place will be a different and a better individual once they leave the gates for good.";
 	mainMap["3"]=userMap;
 	
 	var userMap = {};
-	userMap["name"]="Shamila ";
+	userMap["name"]="Shamila Hamdulay";
 	userMap["batch"]="&nbsp;&nbsp;- Batch 2017-2018";
-	userMap["content"]="The time I spend at R.T.H.S.V was El Dorado. The management of college was extremely zealous in the application of regulations. Most of the students & teachers are very eager & enthusiastic avid readers. Teachers at R.T.H.S.V provide bolster confidence to students. You have to be an attentive, empathic listener if you want your grades high. My reminiscence of college days will overcome with acute nostalgia for my days at college. ";
+	userMap["content"]="A college is a place where pebbles are polished and diamonds are dimmed. The function of education is to teach one to think critically and my college Ramsheth Thakur Higher Secondary Vidyalaya did the same along with developing intelligence and character. The positive atmosphere in the college is what used to drive us to come to college to learn new concepts and participate in all the activities. I still remember the words of my class teacher on the last day of the college ’No matter what you become in life, what profession you pursue, always ensure that you become a good human being first’. All I can say is that things end but memories last forever, because now it’s not just college but now we are family whose roots cannot be separated. ";
 	mainMap["4"]=userMap;
+	
+	var userMap = {};
+	userMap["name"]="Rafat Karbhari";
+	userMap["batch"]="&nbsp;&nbsp;- Batch 2018-2019";
+	userMap["content"]="The Teacher are well qualified and fair in there work, The college impose strict rules on both faculty and student to maintain uniformity and discpline, Also college maintain balance between the acadeny and extracurricular activities, which makes student easy.The Infrastructure of this campus is mind-blowing.The practical labs are well equipped.The library offers you many options.And the memories in the canteen will always remind you this place.One more point to add is natural beauty surrounding the campus is mesmerizing.";
+	mainMap["5"]=userMap;
 	
 	var userMap = {};
 	userMap["name"]="Mariyam ";
 	userMap["batch"]="&nbsp;&nbsp;- Batch 2017-2018";
 	userMap["content"]="Being a student at J.B.S.P Sanstha's 'Ramsheth Thakur Higher Secondary Vidyalaya,Kharghar' has been a surreal experience.Almost two years I spent in this campus as a Science student.I learned so many things here.There's been not only academics but also extra-curricular activities like dancing,singing, sports,elocution,placard,rangoli,mehendi, greeting cards and many more.And I realised that after,at the end of this journey I was completely different person,more confident,self-dependent,able to do things on my own,able to face the World,take on challenges and always smile.The whole staff of teachers and even our Principal played major role in this journey. Teachers over here are really amazing. They are like second mother.And it was not only a college,it was our second home with many caring mothers.";
-	mainMap["5"]=userMap;
+	mainMap["6"]=userMap;
 	
 	var userMap = {};
 	userMap["name"]="Kashmiri";
 	userMap["batch"]="&nbsp;&nbsp;- Batch 2017-2018";
 	userMap["content"]="My Two Years at Ramseth Thakur College have been Excellent and a memory to cherish for a lifetime. All Teachers and staff are professional, Helpul,kind and friendly. Yes i said friendly because my Teachers have Taught me lessons not only from the Books, but also from LIFE. That if we Face any Hard phase then how we should conquer it, I took Admission  and to be honest have learnt perfect things at correct age,I Took Science Stream, but You also have an Option of choosing Commerce too ";
-	mainMap["6"]=userMap;
+	mainMap["7"]=userMap;
 	
 	var userMap = {};
 	userMap["name"]="Rahul Suryavanshi";
 	userMap["batch"]="&nbsp;&nbsp;- Batch 2017-2018";
 	userMap["content"]="College environment for study purpose is really excellent they have well equipped lab for all necessary subject the teaching staff is really supportive and helpful in case students find any difficulty non teaching staff is also really co-operative in all the activities";
-	mainMap["7"]=userMap;
+	mainMap["8"]=userMap;
 	
 	var userMap = {};
 	userMap["name"]="Shruti Telawane";
 	userMap["batch"]="&nbsp;&nbsp;- Batch 2018-2020";
 	userMap["content"]="I'm from Kharghar and I had studied in Ramsheth Thakur College of Commerce and Science from 2018-20. It's a great place for students. All the teachers and staffs are friendly and helpful. 2 years in RTHSV College not only teaches us our syllabus but also helps us in various activities such as social, cultural, etc. All the labs and their respective lab assistant are too good even the college has such a big ground for sports activities. I along with my friends enjoyed a lot studying in RTHSV College,Kharghar.";
-	mainMap["8"]=userMap;
+	mainMap["9"]=userMap;
 	
 	var userMap = {};
 	userMap["name"]="Rachana Hiwale";
 	userMap["batch"]="&nbsp;&nbsp;- Batch 2018-2020";
 	userMap["content"]="I Miss. Rachana Hiwale would like to express my gratitude towards my college and teachers for helping me achieving my score. There were so many things about my time at the college, including how fantastically knowledgeable my teachers were. Not only academic but also lots of different activities on campus allowed me enhance my talent and have an overall development. Ramsheth Thakur college helped me grow career-wise but i have also gained values and memories, I will cherish for life.";
-	mainMap["9"]=userMap;
+	mainMap["10"]=userMap;
 	
 	var userMap = {};
 	userMap["name"]="Sachin Patil";
 	userMap["batch"]="&nbsp;&nbsp;- Batch 2018-2020";
 	userMap["content"]="My Two years at RTHSV College were great and a memory to cherish for lifetime.Here the Atmosphere is full of motivation and innovation. All the faculties are enthusiastic and always ready to help. It was full of learning and grooming oneself. Overall it was a great experience and lifetime memory at RTHSV college.";
-	mainMap["10"]=userMap;
+	mainMap["11"]=userMap;
+	
+	var userMap = {};
+	userMap["name"]="Omkar Tapshale";
+	userMap["batch"]="&nbsp;&nbsp;- Batch 2018-2020";
+	userMap["content"]="My two years at Ramsheth Thakur Higher Secondary Vidyalaya has been an excellent journey and a memory to cherish for a life time. All teachers and staff are professional, helpful, kind and friendly. Yes, I said friendly because my teachers have taught me lessons not only from the books, but also from Life. Life is full of ups and downs but how we should face hardships and grow strong is what I learnt here. I took admission for science stream in this college and I feel that it was the right decision taken at the right time.";
+	mainMap["12"]=userMap;
+	
+	var userMap = {};
+	userMap["name"]="Kaustubh Anil Mundhe";
+	userMap["batch"]="&nbsp;&nbsp;- Batch 2016-2017";
+	userMap["content"]="My Institute, My Teacher and My Friends were  three Important pillars of my junior college life. My Institute gave me opportunity to excel in  sports (volleyball),  studies & competition About my  Teachers: I was an average student. They help me a lot in that two years (The best friendly Teachers of my life.) I was not good in physics . But I learnt to learn the subject in an interesting way that later proved to be top scoring subject for me. ";
+	mainMap["13"]=userMap;
+	
+	var userMap = {};
+	userMap["name"]="Gurudatt";
+	userMap["batch"]="&nbsp;&nbsp;- Batch 2016-2017";
+	userMap["content"]="I found here, the most experienced and supporting teachers. I got ample opportunities to develop my confidence which kept me motivated and helped me get good grades. My Journey in this college lead me to take right decision for my career.";
+	mainMap["14"]=userMap;
 	
 	$.each(mainMap, function(key, value) {   
 		$("#testimonialContent").append('<div class="wm-thumb-testimonial-layer">'+

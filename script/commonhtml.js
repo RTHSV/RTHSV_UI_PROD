@@ -171,7 +171,7 @@ var footer = '<footer id="wm-footer" class="wm-footer-one">'+
                                 '<a href="'+imgpt+'/index.html" class="wm-footer-logo"><img src="'+imgpt+'/images/Logo.PNG" alt="" width="80px"></a>'+
                                 '<ul>'+
                                     '<li><i class="wm-color wmicon-pin"></i> PLOT NO.1,SECTOR 33, KHARGHAR,NAVI MUMBAI -  410210</li>'+
-                                    '<li><i class="wm-color wmicon-phone"></i> +91 932-338-2271 <br /> +91 932-360-9161 <br /> +91 887-974-7375</li>'+
+                                    '<li><i class="wm-color wmicon-phone"></i> +91 932-338-2271 <br /> +91 987-022-5459 <br /> +91 887-974-7375</li>'+
                                     '<li><i class="wm-color wmicon-letter"></i><a href="mailto:principal@rthsv.com">principal@rthsv.com</a></li>'+
                                 '</ul>'+
                             '</aside>'+

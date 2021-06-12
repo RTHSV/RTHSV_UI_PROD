@@ -23,7 +23,7 @@ if(window.location.href.indexOf('/admin')!=-1) {
 var socialIcons = '<div class="social-icon-bar nonAppviewClass">';
 socialIcons +='<a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://rthsv.com" class="fb"><i class="fa fa-facebook"></i></a>';
 socialIcons +='<a target="_blank" href="http://twitter.com/share?text=https://rthsv.com Best college in Navi-Mumbai&amp;url=https://rthsv.com/&amp;hashtags=College,Navi-Mumbai" class="tw"><i class="fa fa-twitter"></i></a>';
-socialIcons +='<a target="_blank" href="https://api.whatsapp.com/send?phone=+919892125742&amp;text=Hi" class="go"><i class="fa fa-whatsapp"></i></a>';
+socialIcons +='<a target="_blank" href="https://api.whatsapp.com/send?phone=+919766628471&amp;text=Hi" class="go"><i class="fa fa-whatsapp"></i></a>';
 socialIcons +='<a target="_blank" href="https://play.google.com/store/apps/details?id=com.rthsv" class="li"><i class="fa fa-play"></i></a>';
 socialIcons +='<a target="_blank" href="mailto:principal@rthsv.com" class="yt"><i class="fa fa-envelope"></i></a>';
 socialIcons +='</div>';

@@ -514,11 +514,12 @@ function generateEventMap(){
 	map["Gurupurnima"]="Gurupurnima Event,2018-19#8,2019-20#10";
 	map["TeachersDay"]="Teachers Day,2016-17#6,2017-18#3,2018-19#23,2019-20#61";
 	map["TraditionalDay"]="Traditional Day,2016-17#4,2018-19#34";
-	map["YogaDay"]="Yoga Day,2017-18#5,2018-19#28";
+	map["YogaDay"]="Yoga Day,2017-18#5,2018-19#28,2021-22#24";
 	map["AnnualDay"]="Annual Day,2016-17#2,2017-18#7";
 	map["OrientationDay"]="Orientation Day,2018-19#1,2019-20#27";
 	map["PriceDistrubition"]="Prize Distribution,2016-17#8,2017-18#8";
 	map["Rakhi"]="Rakhi Competition,2018-19#3";
+	map["VachanDay"]="Vachan Day,2021-22#16";
 	map["Other"]="Other Event,2016-17#2,2017-18#7,2018-19#8";
 	return map;
 }

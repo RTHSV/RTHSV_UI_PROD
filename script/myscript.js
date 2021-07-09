@@ -19,7 +19,7 @@ function showSlides() {
 	}
 	slides[slideIndex - 1].style.display = "block";
 	dots[slideIndex - 1].className += " w3-white";
-	timeoutvar = setTimeout(showSlides, 2000); // Change image every 2 seconds
+	timeoutvar = setTimeout(showSlides, 6000); // Change image every 2 seconds
 }
 function plusImage(index) {
 	stopSlideShow();
@@ -33,6 +33,38 @@ function slidePosition(index) {
 }
 function stopSlideShow() {
 	clearTimeout(timeoutvar);
+}
+var timeoutvar2;
+var slideIndex2 = 0;
+function showSlides2() {
+	var i;
+	var slides2 = document.getElementsByClassName("mySlides2");
+	var dots = document.getElementsByClassName("dot2");
+	for (i = 0; i < slides2.length; i++) {
+		slides2[i].style.display = "none";
+	}
+	slideIndex2++;
+	if (slideIndex2 > slides2.length) { slideIndex2 = 1 }
+	if (slideIndex2 == 0) { slideIndex2 = slides2.length }
+	for (i = 0; i < dots.length; i++) {
+		dots[i].className = dots[i].className.replace(" w3-white", "");
+	}
+	slides2[slideIndex2 - 1].style.display = "block";
+	dots[slideIndex2 - 1].className += " w3-white";
+	timeoutvar2 = setTimeout(showSlides2, 5000); // Change image every 2 seconds
+}
+function plusImage2(index) {
+	stopSlideShow2();
+	slideIndex2 = parseInt(index) + parseInt(slideIndex2) - 1;
+	showSlides2();
+}
+function slidePosition2(index) {
+	stopSlideShow2();
+	slideIndex2 = parseInt(index)- 1;
+	showSlides2();
+}
+function stopSlideShow2() {
+	clearTimeout(timeoutvar2);
 }
 /*
 function getAllActiveNotices(){
@@ -458,7 +490,8 @@ function initTestimonialData(){
 			'</figure>'+
 			'<div class="thumb-testimonial-text">'+
 				'<h4><a href="javascript:void(0);">'+value["name"]+'</a></h4>'+
-				'<span class="wm-color-two">'+value["batch"]+'</span>'+
+				//'<span class="wm-color-two">'+value["batch"]+'</span>'+
+				'<span class="wm-color-two"></span>'+
 				'<p>'+value["content"]+'</p>'+
 			'</div>'+
 		'</div>');
@@ -497,8 +530,11 @@ function initFAQ(){
 	});
 }
 function initLabImg(){
+	var s = window.location.search;
+	var key = s.substr(1,s.length);
+	$(".type").html(key);
 	for(var i =1;i<=26;i++){
-		 $("#labimg").append('<li><a title="" data-rel="prettyPhoto[gallery1]" href="'+imgpt+'/images/lab/large/'+i+'.JPG"><img src="'+imgpt+'/images/lab/small/'+i+'.JPG" alt="" ></a></li>');
+		 $("#labimg").append('<li><a title="" data-rel="prettyPhoto[gallery1]" href="'+imgpt+'/images/lab/'+key+'/large/'+i+'.JPG"><img src="'+imgpt+'/images/lab/'+key+'/small/'+i+'.JPG" alt="" ></a></li>');
 	}
 }
 function initLabImgMobile(){
@@ -511,16 +547,16 @@ function initLabImgMobile(){
 
 function generateEventMap(){
 	var map={}
-	map["Gurupurnima"]="Gurupurnima Event,2018-19#8,2019-20#10";
-	map["TeachersDay"]="Teachers Day,2016-17#6,2017-18#3,2018-19#23,2019-20#61";
-	map["TraditionalDay"]="Traditional Day,2016-17#4,2018-19#34";
-	map["YogaDay"]="Yoga Day,2017-18#5,2018-19#28,2021-22#24";
-	map["AnnualDay"]="Annual Day,2016-17#2,2017-18#7";
-	map["OrientationDay"]="Orientation Day,2018-19#1,2019-20#27";
-	map["PriceDistrubition"]="Prize Distribution,2016-17#8,2017-18#8";
+	map["Gurupurnima"]="Gurupurnima Event,2019-20#10,2018-19#8";
+	map["TeachersDay"]="Teachers Day,2019-20#61,2018-19#23,2017-18#3,2016-17#6";
+	map["TraditionalDay"]="Traditional Day,2018-19#34,2016-17#4";
+	map["YogaDay"]="Yoga Day,2021-22#24,2018-19#28,2017-18#5";
+	map["AnnualDay"]="Annual Day,2017-18#7,2016-17#2";
+	map["OrientationDay"]="Orientation Day,2019-20#27,2018-19#1";
+	map["PriceDistrubition"]="Prize Distribution,2017-18#8,2016-17#8";
 	map["Rakhi"]="Rakhi Competition,2018-19#3";
 	map["VachanDay"]="Vachan Day,2021-22#16";
-	map["Other"]="Other Event,2016-17#2,2017-18#7,2018-19#8";
+	map["Other"]="Other Event,2018-19#8,2017-18#7,2016-17#2";
 	return map;
 }
 

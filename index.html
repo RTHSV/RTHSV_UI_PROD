@@ -27,6 +27,7 @@
     <link href="./css/color-three.css" rel="stylesheet">
     <link href="./css/color-four.css" rel="stylesheet">
     <link href="./css/responsive.css" rel="stylesheet">
+    <link href="./css/slider.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -45,12 +46,12 @@
         <div id="headerSec"></div>
 
         <div class="container">
-            <div class="w3-content w3-display-container">
-                <img class="mySlides" src="./images/slider/f_slider1.jpg">
-                <img class="mySlides" src="./images/slider/f_slider2.jpg">
-                <img class="mySlides" src="./images/slider/f_slider3.jpg">
-                <img class="mySlides" src="./images/slider/f_slider222.jpg">
-                <img class="mySlides" src="./images/slider/f_slider5.jpg">
+            <div class="w3-content w3-display-container pic-wrapper">
+                <img class="mySlides pic-1" src="./images/slider/f_slider1.jpg">
+                <img class="mySlides pic-2" src="./images/slider/f_slider2.jpg">
+                <img class="mySlides pic-3" src="./images/slider/f_slider3.jpg">
+                <img class="mySlides pic-4" src="./images/slider/f_slider222.jpg">
+                <img class="mySlides pic-5" src="./images/slider/f_slider5.jpg">
                 <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle"
                     style="width:100%">
                     <div class="w3-left w3-hover-text-khaki" onclick="plusImage(-1)" style="padding-left: 10px;">
@@ -165,6 +166,40 @@
                 </div>
 
             </div>
+			
+			 <div class="wm-main-section wm-news-grid-full" style="padding: 0 !important;">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-md-12">
+                            <div class="wm-fancy-title">
+                                <h2><span>Cappella</span></h2>
+                            </div>
+                            <div class="wm-news wm-news-grid">								
+									<div class="w3-content w3-display-container pic-wrapper">
+										<img class="mySlides2 pic-1" src="./images/cappella/1.jpg">
+										<img class="mySlides2 pic-2" src="./images/cappella/2.jpg">
+										<img class="mySlides2 pic-3" src="./images/cappella/3.jpg">	
+										<div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle"
+												style="width:100%">
+												<div class="w3-left w3-hover-text-khaki" onclick="plusImage2(-1)" style="padding-left: 10px;">
+													<span class="wm-banner-btn w3-custom">&#10094;</span>
+												</div>
+												<div class="w3-right w3-hover-text-khaki" onclick="plusImage2(1)" style="padding-right: 10px;">
+													<span class="wm-banner-btn w3-custom">&#10095;</span>
+												</div>
+												<span class="w3-badge dot2 w3-border w3-transparent w3-hover-white" onclick="slidePosition2(1)"></span>
+												<span class="w3-badge dot2 w3-border w3-transparent w3-hover-white" onclick="slidePosition2(2)"></span>
+												<span class="w3-badge dot2 w3-border w3-transparent w3-hover-white" onclick="slidePosition2(3)"></span>
+										</div>										
+								</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!--// Mai
 
             <!--// Main Section \\-->
             <div class="wm-main-section wm-news-grid-full" style="padding: 0 !important;">
@@ -232,6 +267,7 @@
 	<script type="text/javascript" src="./script/myscript.js" ></script>
     <script>
         showSlides();
+		showSlides2();
 		initTestimonialData();
 		initEvents();
 		if(window.location.search == '?appview'){

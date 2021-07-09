@@ -23,11 +23,11 @@ if(window.location.href.indexOf('/admin')!=-1) {
 var socialIcons = '<div class="social-icon-bar nonAppviewClass">';
 //socialIcons +='<a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://rthsv.com" class="fb"><i class="fa fa-facebook"></i></a>';
 //socialIcons +='<a target="_blank" href="http://twitter.com/share?text=https://rthsv.com Best college in Navi-Mumbai&amp;url=https://rthsv.com/&amp;hashtags=College,Navi-Mumbai" class="tw"><i class="fa fa-twitter"></i></a>';
-socialIcons +='<a target="_blank" href="https://api.whatsapp.com/send?phone=+919766628471&amp;text=Hi" class="go"><i class="fa fa-whatsapp"></i></a>';
+socialIcons +='<a target="_blank" href="https://api.whatsapp.com/send?phone=+919870225459&amp;text=Hi" class="go"><i class="fa fa-whatsapp"></i></a>';
 socialIcons +='<a target="_blank" href="https://play.google.com/store/apps/details?id=com.rthsv" class="li"><i class="fa fa-play"></i></a>';
 socialIcons +='<a target="_blank" href="mailto:principal@rthsv.com" class="yt"><i class="fa fa-envelope"></i></a>';
 socialIcons +='</div>';
-
+var labs="Lab's";
 var webSiteMenus = '<div class="collapse navbar-collapse" id="navbar-collapse-1">'+
                         '<ul class="nav navbar-nav" id="mainmenu">'+
                             '<li class="" page="Home"><a onClick="openPage(this)" data-href="'+imgpt+'/index.html">Home</a></li>'+
@@ -36,10 +36,17 @@ var webSiteMenus = '<div class="collapse navbar-collapse" id="navbar-collapse-1"
                                 '<ul class="wm-dropdown-menu">'+
                                     '<li page="Notices"><a onClick="openPage(this)" data-href="'+imgpt+'/Notices.html">Notice Board</a></li>'+
                                     '<li page="Exam Result"><a onClick="openPage(this)" data-href="'+imgpt+'/ExamResult.html">Exam Results</a></li>'+
-                                    '<li page="Exam Result"><a onClick="openPage(this)" data-href="'+imgpt+'/ranking.html">Student Ranking</a></li>'+
+                                    '<li page="ranking"><a onClick="openPage(this)" data-href="'+imgpt+'/ranking.html">Student Ranking</a></li>'+
                                 '</ul>'+
                             '</li>'+
-							'<li class="" page="laboratory"><a onClick="openPage(this)" data-href="'+imgpt+'/lab.html">Laboratory</a></li>'+
+							'<li class="" page="Gallery"><a data-href="Gallery">Gallery</a>'+
+							'<ul class="wm-dropdown-menu">'+
+                                    '<li page="Chemistry"><a onClick="openPage(this)" data-href="'+imgpt+'/gallery.html?Chemistry">Chemistry Laboratory</a></li>'+
+                                    '<li page="IT"><a onClick="openPage(this)" data-href="'+imgpt+'/gallery.html?IT">IT Laboratory</a></li>'+
+									'<li page="Library"><a onClick="openPage(this)" data-href="'+imgpt+'/gallery.html?Library">Library</a></li>'+
+									'<li page="Sports"><a onClick="openPage(this)" data-href="'+imgpt+'/gallery.html?Sports">Sports</a></li>'+
+                                '</ul>'+							
+							'</li>'+
                             '<li class="" page="About Us"><a data-href="aboutus">About Us</a>'+
                                 '<ul class="wm-dropdown-menu">'+
                                     '<li page="Our Inspiration"><a onClick="openPage(this)" data-href="'+imgpt+'/our-inspiration.html">Our Inspiration</a></li>'+

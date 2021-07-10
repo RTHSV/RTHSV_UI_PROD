@@ -219,13 +219,13 @@ var footer = '<footer id="wm-footer" class="wm-footer-one">'+
 
 function getFooterImg(){
 	var content="";
-	for(var i =1;i<=11;i++){
+	for(var i =1;i<=14;i++){
 		 content = content +'<li><a title="" data-rel="prettyPhoto[gallery1]" href="'+imgpt+'/images/staff/large/'+i+'.jpg"><img src="'+imgpt+'/images/staff/small/'+i+'.jpg" alt=""></a></li>';
 	}
 	return content;
 }
 function initProofesorImg(){
-	for(var i =1;i<=11;i++){
+	for(var i =1;i<=14;i++){
 		$("#proofesorImg").append('<div class="wm-thumb-testimonial-layer">'+
 			'<figure><a href="javascript:void(0);"><img src="'+imgpt+'/images/staff/large/'+i+'.jpg"" style="margin-bottom: 27px;"></a></figure>'+
 			'</div>');

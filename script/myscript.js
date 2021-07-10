@@ -538,11 +538,24 @@ function initLabImg(){
 	}
 }
 function initLabImgMobile(){
-	for(var i =1;i<=26;i++){
-		 $("#labimg").append('<div class="wm-thumb-testimonial-layer">'+
-			'<figure><a href="javascript:void(0);"><img src="'+imgpt+'/images/lab/large/'+i+'.JPG"" style="margin-bottom: 27px;"></a></figure>'+
-			'</div>');
-	}
+	var map={}
+	map["Chemistry"]=26;
+	map["IT"]=9;
+	map["Library"]=5;
+	map["Sports"]=5;	
+	
+	$.each(map, function(key, value) {
+		var header = '<div class="wm-title-typoelements wm-detail-editore">'+
+					'<h2>'+key+'&nbsp;<span>Gallery</span></h2>'+
+				'</div>';
+				var data="";
+			for(var i =1;i<=value;i++){
+				 data = data + '<div class="wm-thumb-testimonial-layer">'+
+					'<figure><a href="javascript:void(0);"><img src="'+imgpt+'/images/lab/'+key+'/large/'+i+'.JPG" style="margin-bottom: 27px;"></a></figure>'+
+					'</div>';
+			}	
+				$("#labimg").append(header+data);
+	});	
 }
 
 function generateEventMap(){

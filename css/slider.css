@@ -13,10 +13,10 @@
   opacity: 0;
   /*animation*/
   
-  animation: slideShow 24s linear infinite 0s;
-  -o-animation: slideShow 24s linear infinite 0s;
-  -moz-animation: slideShow 24s linear infinite 0s;
-  -webkit-animation: slideShow 24s linear infinite 0s;
+  animation: slideShow 48s linear infinite 0s;
+  -o-animation: slideShow 48s linear infinite 0s;
+  -moz-animation: slideShow 48s linear infinite 0s;
+  -webkit-animation: slideShow 48s linear infinite 0s;
 }
 
 .mySlides2 {  

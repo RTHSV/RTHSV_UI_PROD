@@ -130,7 +130,7 @@ var header = '<header id="wm-header" class="wm-header-one" style="z-index: 1 !im
                                 '</nav>'+
                             '</div>'+
                         '</div>'+
-                    '</div>'+
+                    '</div><marquee style="font-weight: bold;color: red;">Notice has been uploaded</marquee>'+
                 '</div>'+
             '</header>';
 

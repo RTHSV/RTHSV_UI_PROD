@@ -130,7 +130,7 @@ var header = '<header id="wm-header" class="wm-header-one" style="z-index: 1 !im
                                 '</nav>'+
                             '</div>'+
                         '</div>'+
-                    '</div><marquee style="font-weight: bold;color: red;">Notice has been uploaded</marquee>'+
+                    '</div><marquee style="font-weight: bold;color: red;">11th Admission Online process has been started.. <a target="_blank" style="color:red" href="https://www.11thadmission.org.in">www.11thadmission.org.in</a></marquee>'+
                 '</div>'+
             '</header>';
 
